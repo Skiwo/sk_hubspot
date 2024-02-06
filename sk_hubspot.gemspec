@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "This gem is just a thin wrapper around the hubspot-api-client"
   spec.homepage = "https://github.com/Skiwo/sk_hubspot"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
 
@@ -29,8 +29,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
-  spec.add_dependency "hubspot-api-client", "~> 17.2"
   spec.add_dependency "activesupport", ">= 6.0"
+  spec.add_dependency "hubspot-api-client", "~> 17.2"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
