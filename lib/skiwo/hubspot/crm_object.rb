@@ -2,7 +2,28 @@
 
 module Skiwo
   module Hubspot
-    class BaseObject
+    class CrmObject
+      attr_accessor :id
+      attr_accessor :properties
+      attr_accessor :properties_with_history
+      attr_accessor :created_at
+      attr_accessor :updated_at
+      attr_accessor :archived
+      attr_accessor :archived_at
+      attr_accessor :associations
+
+      def initialize(object)
+        @id = object.id
+        @properties = object.properties
+        @properties = object.properties
+        @properties_with_history = object.properties_with_history
+        @created_at = object.created_at
+        @updated_at = object.updated_at
+        @archived = object.archived
+        @archived_at = object.archived_at
+        @associations = object.associations
+      end
+
       def self.object_type_id
         raise NotImplementedError
       end

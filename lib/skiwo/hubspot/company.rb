@@ -2,7 +2,7 @@
 
 module Skiwo
   module Hubspot
-    class Company < Skiwo::Hubspot::BaseObject
+    class Company < Skiwo::Hubspot::CrmObject
       OBJECT_TYPE_ID = "0-2"
 
       def self.object_type_id
