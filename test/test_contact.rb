@@ -19,8 +19,8 @@ class TestContact < Minitest::Test
 
   def test_that_it_updates_contact
     VCR.use_cassette("contacts/update_one") do
-      object_id = sample_contact1.fetch(:hs_object_id)
-      first_name = "#{sample_contact1[:firstname]} Updated"
+      object_id = sample_contact.fetch(:hs_object_id)
+      first_name = "#{sample_contact[:firstname]} Updated"
       platform_id = "this-is-a-test-platform-id"
       attributes = { firstname: first_name, platform_id: platform_id }
 
@@ -62,7 +62,7 @@ class TestContact < Minitest::Test
   end
 
   # Sample contact provided by Hubspot
-  def sample_contact1
+  def sample_contact
     {
       hs_object_id: 1,
       firstname: "Maria",

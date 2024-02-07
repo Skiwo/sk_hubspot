@@ -9,7 +9,7 @@ module Skiwo
         OBJECT_TYPE_ID
       end
 
-      def default_properties
+      def self.default_properties
         %w[
           hs_object_id
           firstname
