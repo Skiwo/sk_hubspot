@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://api.hubapi.com/crm/v3/objects/companies/19002270347
+    body:
+      encoding: UTF-8
+      string: '{"properties":{"name":"Skiwo Sample Company Updated"}}'
+    headers:
+      User-Agent:
+      - hubspot-api-client-ruby; 17.2.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 07 Feb 2024 05:25:57 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Cf-Ray:
+      - 8519371828d656be-OSL
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - origin
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '127'
+      X-Evy-Trace-Listener:
+      - listener_https
+      X-Evy-Trace-Route-Configuration:
+      - listener_https/all
+      X-Evy-Trace-Route-Service-Name:
+      - envoyset-translator
+      X-Evy-Trace-Served-By-Pod:
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-k4qrp
+      X-Evy-Trace-Virtual-Host:
+      - all
+      X-Hubspot-Correlation-Id:
+      - 7fd99d85-68ca-4f08-9a33-e8c2e5304c8f
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499996'
+      X-Hubspot-Ratelimit-Interval-Milliseconds:
+      - '10000'
+      X-Hubspot-Ratelimit-Max:
+      - '150'
+      X-Hubspot-Ratelimit-Remaining:
+      - '149'
+      X-Hubspot-Ratelimit-Secondly:
+      - '15'
+      X-Hubspot-Ratelimit-Secondly-Remaining:
+      - '14'
+      X-Request-Id:
+      - 7fd99d85-68ca-4f08-9a33-e8c2e5304c8f
+      X-Trace:
+      - 2B5E562F629809667CF17963FFD34DC5716CDC110E000000000000000000
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=X0R2QNMQF50dVBSLw4v8YWasztA6HF5fq9kjZ%2BaF%2F2fOtIzHsFMYUPbDkaGEVWJzQNXEHpOpbaOztd5bPtqeZIbVwtv8MOubUuaApwwGXgBLMgjMo1cO4leYckM4gzU1%2Bnl1khRorO3vaI3v"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"19002270347","properties":{"createdate":"2024-02-07T05:23:57.776Z","hs_lastmodifieddate":"2024-02-07T05:25:57.358Z","hs_object_id":"19002270347","hs_pipeline":"companies-lifecycle-pipeline","lifecyclestage":"lead","name":"Skiwo
+        Sample Company Updated"},"createdAt":"2024-02-07T05:23:57.776Z","updatedAt":"2024-02-07T05:25:57.358Z","archived":false}'
+  recorded_at: Wed, 07 Feb 2024 05:25:57 GMT
+recorded_with: VCR 6.2.0

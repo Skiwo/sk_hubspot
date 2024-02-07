@@ -8,6 +8,7 @@ require_relative "hubspot/client"
 require_relative "hubspot/error"
 require_relative "hubspot/base_object"
 require_relative "hubspot/contact"
+require_relative "hubspot/company"
 
 module Skiwo
   module Hubspot # :nodoc:
