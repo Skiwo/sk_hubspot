@@ -9,6 +9,7 @@ module Skiwo
         OBJECT_TYPE_ID
       end
 
+      # Properties that will be returned in a response
       def self.default_properties
         %w[
           hs_object_id
@@ -19,6 +20,7 @@ module Skiwo
           createdate
           lastmodifieddate
           platform_id
+          associatedcompanyid
         ]
       end
     end
