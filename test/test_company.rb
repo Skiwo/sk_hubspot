@@ -35,7 +35,7 @@ class TestCompany < Minitest::Test
       object_id = "999999999999"
       attributes = { name: Faker::Company.name }
 
-      company, error = Skiwo::Hubspot::Company.update(object_id, attributes: basic_attributes)
+      company, error = Skiwo::Hubspot::Company.update(object_id, attributes: attributes)
       assert_nil company
       assert_equal 404, error.code
     end
@@ -62,7 +62,7 @@ class TestCompany < Minitest::Test
   # Sample company
   def sample_company
     {
-      hs_object_id: 19002270347,
+      hs_object_id: "19002270347",
       name: basic_attributes[:name]
     }
   end

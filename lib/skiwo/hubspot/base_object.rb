@@ -101,36 +101,32 @@ module Skiwo
         end
       end
 
-
       def self.properties(object_type: self.object_type)
-        response, error = Skiwo::Hubspot.crm
-          .properties
-          .core_api
-          .get_all(object_type: object_type) do |err|
-          error = Skiwo::Hubspot::Error.with_api_error(err)
-          end
+        properties, error = Skiwo::Hubspot.properties(object_type: object_type)
 
         if error
           [nil, error]
         else
-          [response.results, nil]
+          [properties, nil]
         end
       end
 
-      private
+      class << self
+        private
 
-      def self.identifier_name
-        @identifier_name ||= "#{object_type.downcase}_id"
-      end
+        def identifier_name
+          @identifier_name ||= "#{object_type.downcase}_id"
+        end
 
-      def self.basic_api
-        api_name = object_type.downcase.pluralize
-        Skiwo::Hubspot.crm.public_send(api_name).basic_api
-      end
+        def basic_api
+          api_name = object_type.downcase.pluralize
+          Skiwo::Hubspot.crm.public_send(api_name).basic_api
+        end
 
-      def self.search_api
-        api_name = object_type.downcase.pluralize
-        Skiwo::Hubspot.crm.public_send(api_name).search_api
+        def search_api
+          api_name = object_type.downcase.pluralize
+          Skiwo::Hubspot.crm.public_send(api_name).search_api
+        end
       end
     end
   end

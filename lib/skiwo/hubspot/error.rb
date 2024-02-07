@@ -2,21 +2,25 @@
 
 require "json"
 
-class Skiwo::Hubspot::Error < StandardError
-  attr_reader :code, :message
+module Skiwo
+  module Hubspot
+    class Error < StandardError # :nodoc:
+      attr_reader :code, :message
 
-  def initialize(code:, message:)
-    @code = code
-    @messag = message
-  end
+      def initialize(code:, message:)
+        super
+        @code = code
+        @messag = message
+      end
 
-  def self.with_api_error(error)
-    begin
-      message = JSON.parse(error.message)
-    rescue JSON::ParserError
-      message = { status: "error", message: error.message }
+      def self.with_api_error(error)
+        begin
+          message = JSON.parse(error.message)
+        rescue JSON::ParserError
+          message = { status: "error", message: error.message }
+        end
+        new(code: error.code, message: message)
+      end
     end
-    new(code: error.code, message: message)
   end
 end
-

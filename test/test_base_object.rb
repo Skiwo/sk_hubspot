@@ -21,7 +21,7 @@ class TestBaseObject < Minitest::Test
 
   def test_it_returns_properties_for_object_type
     VCR.use_cassette("basic_object/properties") do
-      properties, error = Skiwo::Hubspot::BaseObject.properties(object_type: "Contact")
+      properties, _error = Skiwo::Hubspot::BaseObject.properties(object_type: "Contact")
       refute_empty properties
     end
   end
