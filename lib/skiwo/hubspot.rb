@@ -19,6 +19,19 @@ module Skiwo
     def self.crm
       client.crm
     end
+
+    def self.properties(object_type: )
+      error = nil
+      properties = crm.properties.core_api.get_all(object_type: object_type) do |err|
+        error = Skiwo::Hubspot::Error.with_api_error(err)
+      end
+
+      if error
+        [nil, error]
+      else
+        [properties.results, nil]
+      end
+    end
   end
 end
 
