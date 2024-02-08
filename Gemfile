@@ -11,3 +11,5 @@ gem "minitest", "~> 5.0"
 gem "rake", "~> 13.0"
 gem "rubocop", "~> 1.21"
 gem "vcr", "~> 6.2"
+
+gem "rubocop-minitest", "~> 0.34.5"
