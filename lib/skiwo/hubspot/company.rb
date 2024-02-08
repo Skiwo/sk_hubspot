@@ -2,6 +2,9 @@
 
 module Skiwo
   module Hubspot
+    ##
+    # Hubspot's CRM Company
+    #
     class Company < Skiwo::Hubspot::CrmObject
       OBJECT_TYPE_ID = "0-2"
 
@@ -10,14 +13,7 @@ module Skiwo
       end
 
       def self.default_properties
-        %w[
-          hs_object_id
-          name
-          domain
-          createdate
-          lastmodifieddate
-          platform_id
-        ]
+        %w[hs_object_id name domain createdate lastmodifieddate platform_id]
       end
     end
   end

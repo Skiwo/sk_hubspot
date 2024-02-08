@@ -2,15 +2,12 @@
 
 module Skiwo
   module Hubspot
+    ##
+    # Base class for Hubspot's CRM Objects
+    #
     class CrmObject
-      attr_accessor :id
-      attr_accessor :properties
-      attr_accessor :properties_with_history
-      attr_accessor :created_at
-      attr_accessor :updated_at
-      attr_accessor :archived
-      attr_accessor :archived_at
-      attr_accessor :associations
+      attr_accessor :id, :properties, :properties_with_history, :created_at,
+                    :updated_at, :archived, :archived_at, :associations
 
       def initialize(object)
         @id = object.id
