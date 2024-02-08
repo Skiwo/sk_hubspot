@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.hubapi.com/crm/v3/objects/companies
+    uri: https://api.hubapi.com/crm/v3/objects/Company
     body:
       encoding: UTF-8
       string: '{"properties":{"name":"Skiwo Sample Company","platform_id":"test-platform-id","domain":"test.skiwo.com"}}'
@@ -23,13 +23,13 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Wed, 07 Feb 2024 05:23:57 GMT
+      - Thu, 08 Feb 2024 09:40:02 GMT
       Content-Type:
       - application/json;charset=utf-8
       Location:
-      - https://api.hubapi.com/crm/v3/objects/companies/19002270347
+      - https://api.hubapi.com/crm/v3/objects/Company/19019092085
       Cf-Ray:
-      - 8519342d0ecbb500-OSL
+      - 8522e8aad9205695-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -41,7 +41,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '158'
+      - '161'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -49,38 +49,38 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-dlfxr
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-c7v6d
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - ee9b64bf-6b9d-4f7d-8d23-57e032a99a5c
+      - 0a2cd123-5148-4f5c-97ed-35c947975147
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499998'
+      - '499976'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '149'
+      - '145'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - ee9b64bf-6b9d-4f7d-8d23-57e032a99a5c
+      - 0a2cd123-5148-4f5c-97ed-35c947975147
       X-Trace:
-      - 2BE1EED5D53F016BC955DE5A2AC0D8C5DC597C566E000000000000000000
+      - 2B0C3478D00E70CE67FB60C2283066FEE56650631E000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=fkr%2B9DHCN061YlHdjrag%2BNpWtjCODiRhVqxZHi%2BRGL%2Fauej1%2FZDW7lO2Ng1Qo69lUiXMuq1FPX%2Bv5daZ6rE7VSHu8wkzc8A6BMKXxf7liCjWQSxYis9JK%2Fc%2FYyQvpF66PXNMH5b5zyD8SpLR"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ugIQQeYGuj%2FzsY35nN8MncS3YVFS2SND0svbDFcTedJ1JeVJFM4z77CNt4gGCL3r73FdgByyGgWYiW%2FsJ%2F6QY9KvR%2FlZY%2B07KYX7jykht7okgLmF%2FgeqJviAjuZbZjWB"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"19002270347","properties":{"createdate":"2024-02-07T05:23:57.776Z","domain":"test.skiwo.com","hs_lastmodifieddate":"2024-02-07T05:23:57.776Z","hs_object_id":"19002270347","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"companies-lifecycle-pipeline","lifecyclestage":"lead","name":"Skiwo
-        Sample Company","platform_id":"test-platform-id","website":"test.skiwo.com"},"createdAt":"2024-02-07T05:23:57.776Z","updatedAt":"2024-02-07T05:23:57.776Z","archived":false}'
-  recorded_at: Wed, 07 Feb 2024 05:23:57 GMT
+      string: '{"id":"19019092085","properties":{"createdate":"2024-02-08T09:40:02.478Z","domain":"test.skiwo.com","hs_lastmodifieddate":"2024-02-08T09:40:02.478Z","hs_object_id":"19019092085","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"companies-lifecycle-pipeline","lifecyclestage":"lead","name":"Skiwo
+        Sample Company","platform_id":"test-platform-id","website":"test.skiwo.com"},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-08T09:40:02.478Z","archived":false}'
+  recorded_at: Thu, 08 Feb 2024 09:40:02 GMT
 recorded_with: VCR 6.2.0

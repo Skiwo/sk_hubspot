@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: https://api.hubapi.com/crm/v3/objects/companies/19002270347
+    uri: https://api.hubapi.com/crm/v3/objects/Company/19019092085
     body:
       encoding: UTF-8
       string: '{"properties":{"name":"Skiwo Sample Company Updated"}}'
@@ -23,11 +23,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Wed, 07 Feb 2024 05:25:57 GMT
+      - Thu, 08 Feb 2024 09:41:26 GMT
       Content-Type:
       - application/json;charset=utf-8
       Cf-Ray:
-      - 8519371828d656be-OSL
+      - 8522eab72c6fb4f3-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -39,7 +39,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '127'
+      - '76'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -47,15 +47,15 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-k4qrp
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-6wf6k
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 7fd99d85-68ca-4f08-9a33-e8c2e5304c8f
+      - fab47f79-74a0-43d4-8b34-ffb1f0e5ef82
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499996'
+      - '499971'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
@@ -67,18 +67,18 @@ http_interactions:
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 7fd99d85-68ca-4f08-9a33-e8c2e5304c8f
+      - fab47f79-74a0-43d4-8b34-ffb1f0e5ef82
       X-Trace:
-      - 2B5E562F629809667CF17963FFD34DC5716CDC110E000000000000000000
+      - 2BFED79CF387C84AED99012C4B9CA3ACF0A85468F6000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=X0R2QNMQF50dVBSLw4v8YWasztA6HF5fq9kjZ%2BaF%2F2fOtIzHsFMYUPbDkaGEVWJzQNXEHpOpbaOztd5bPtqeZIbVwtv8MOubUuaApwwGXgBLMgjMo1cO4leYckM4gzU1%2Bnl1khRorO3vaI3v"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=snlERbtzKNLbwUZ4R7%2FCvaHdMLraOhdgslLV%2F6syrkYui2bR2AvBnnS3Ql0MkfyuvHnBNUtF4SId5wfWR%2BeGs8CxiugP2yjgqqtKbU2MTcUBIzz0eEdOntQcIbWeapjp"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"19002270347","properties":{"createdate":"2024-02-07T05:23:57.776Z","hs_lastmodifieddate":"2024-02-07T05:25:57.358Z","hs_object_id":"19002270347","hs_pipeline":"companies-lifecycle-pipeline","lifecyclestage":"lead","name":"Skiwo
-        Sample Company Updated"},"createdAt":"2024-02-07T05:23:57.776Z","updatedAt":"2024-02-07T05:25:57.358Z","archived":false}'
-  recorded_at: Wed, 07 Feb 2024 05:25:57 GMT
+      string: '{"id":"19019092085","properties":{"createdate":"2024-02-08T09:40:02.478Z","hs_lastmodifieddate":"2024-02-08T09:41:26.430Z","hs_object_id":"19019092085","hs_pipeline":"companies-lifecycle-pipeline","lifecyclestage":"lead","name":"Skiwo
+        Sample Company Updated"},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-08T09:41:26.430Z","archived":false}'
+  recorded_at: Thu, 08 Feb 2024 09:41:26 GMT
 recorded_with: VCR 6.2.0

@@ -31,7 +31,7 @@ module Skiwo
       def find(id, options: {})
         options = { properties: default_properties, archived: false }.merge(options)
         error = nil
-        response = basic_api.get_by_id(identifier_name.to_sym => id, **options) do |err|
+        response = basic_api.get_by_id(object_type: object_type, object_id: id, **options) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
@@ -47,7 +47,7 @@ module Skiwo
         body = { properties: properties, filterGroups: [{ filters: filters }] }
 
         error = nil
-        response = search_api.do_search(body: body) do |err|
+        response = search_api.do_search(object_type: object_type, body: body) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
@@ -79,7 +79,7 @@ module Skiwo
       def update(id, attributes: {})
         body = { properties: attributes }
         error = nil
-        response = basic_api.update(identifier_name.to_sym => id, :body => body) do |err|
+        response = basic_api.update(object_type: object_type, object_id: id, body: body) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
@@ -109,7 +109,7 @@ module Skiwo
       def create(attributes:)
         body = { properties: attributes }
         error = nil
-        response = basic_api.create(body: body) do |err|
+        response = basic_api.create(object_type: object_type, body: body) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
@@ -122,18 +122,12 @@ module Skiwo
 
       private
 
-      def identifier_name
-        @identifier_name ||= "#{object_type.downcase}_id"
-      end
-
       def basic_api
-        api_name = object_type.downcase.pluralize
-        Skiwo::Hubspot.crm.public_send(api_name).basic_api
+        Skiwo::Hubspot.crm.objects.basic_api
       end
 
       def search_api
-        api_name = object_type.downcase.pluralize
-        Skiwo::Hubspot.crm.public_send(api_name).search_api
+        Skiwo::Hubspot.crm.objects.search_api
       end
     end
   end

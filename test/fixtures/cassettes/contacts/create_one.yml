@@ -2,10 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.hubapi.com/crm/v3/objects/contacts
+    uri: https://api.hubapi.com/crm/v3/objects/Contact
     body:
       encoding: UTF-8
-      string: '{"properties":{"firstname":"Gene Ric","lastname":"Test User","email":"generic.testuser@skiwo.com","phone":"99887766"}}'
+      string: '{"properties":{"firstname":"Helene","lastname":"Gundersen","email":"generic.testuser@skiwo.com","phone":"+47
+        548 41 929"}}'
     headers:
       User-Agent:
       - hubspot-api-client-ruby; 17.2.0
@@ -23,13 +24,13 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 05 Feb 2024 12:00:12 GMT
+      - Thu, 08 Feb 2024 09:40:00 GMT
       Content-Type:
       - application/json;charset=utf-8
       Location:
-      - https://api.hubapi.com/crm/v3/objects/contacts/2712201
+      - https://api.hubapi.com/crm/v3/objects/Contact/2726201
       Cf-Ray:
-      - 850afddb3928b505-OSL
+      - 8522e89ddd925695-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -41,7 +42,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '431'
+      - '322'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -49,15 +50,15 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-fcdc68c87-zdcvs
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-7dt4b
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - b0935888-dc7e-4682-8eaf-3472e7eb9b80
+      - fb2f6091-a850-412f-a39d-c20dffb16dcf
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499985'
+      - '499982'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
@@ -69,19 +70,18 @@ http_interactions:
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - b0935888-dc7e-4682-8eaf-3472e7eb9b80
+      - fb2f6091-a850-412f-a39d-c20dffb16dcf
       X-Trace:
-      - 2B7487BF3B8DCDD571B39EE4A4BAF5A6A66D775B95000000000000000000
+      - 2B7A8CA98AD5F47CFBE0ACF8A6C4945E8AA7E63D99000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Tu43HomK8bHksLKEahow4iWs5O7FjsdGM%2FHeBWL5Jl1ByvXb7kKjG2VaQwPWSt1JOhcriB11GmbcjTnJpZ7rpBOI8KzaSzVOThqGmyd7gjRjMZXf1FAKoT28OktUeKL9"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ZilLsQ6f7e4h5k6ArjzkrzMuMitxNVA0Qng0%2B3dPQ4rpXgAKZoC8bZpVVYEJ0rRnnRv0Czt44%2Faz87iUn2%2BB32cHWPWTmQ2RPtopvuiEFXOo6EUxNcCbiIYrY67Bcl9Z"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"2712201","properties":{"createdate":"2024-02-05T12:00:12.212Z","email":"generic.testuser@skiwo.com","firstname":"Gene
-        Ric","hs_all_contact_vids":"2712201","hs_email_domain":"skiwo.com","hs_is_contact":"true","hs_is_unworked":"true","hs_lifecyclestage_lead_date":"2024-02-05T12:00:12.212Z","hs_object_id":"2712201","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"contacts-lifecycle-pipeline","hs_searchable_calculated_phone_number":"99887766","lastmodifieddate":"2024-02-05T12:00:12.212Z","lastname":"Test
-        User","lifecyclestage":"lead","phone":"99887766"},"createdAt":"2024-02-05T12:00:12.212Z","updatedAt":"2024-02-05T12:00:12.212Z","archived":false}'
-  recorded_at: Mon, 05 Feb 2024 12:00:12 GMT
+      string: '{"id":"2726201","properties":{"createdate":"2024-02-08T09:40:00.517Z","email":"generic.testuser@skiwo.com","firstname":"Helene","hs_all_contact_vids":"2726201","hs_email_domain":"skiwo.com","hs_is_contact":"true","hs_is_unworked":"true","hs_lifecyclestage_lead_date":"2024-02-08T09:40:00.517Z","hs_object_id":"2726201","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"contacts-lifecycle-pipeline","hs_searchable_calculated_phone_number":"4754841929","lastmodifieddate":"2024-02-08T09:40:00.517Z","lastname":"Gundersen","lifecyclestage":"lead","phone":"+47
+        548 41 929"},"createdAt":"2024-02-08T09:40:00.517Z","updatedAt":"2024-02-08T09:40:00.517Z","archived":false}'
+  recorded_at: Thu, 08 Feb 2024 09:40:00 GMT
 recorded_with: VCR 6.2.0

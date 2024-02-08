@@ -62,7 +62,7 @@ class TestCompany < Minitest::Test
   # Sample company
   def sample_company
     {
-      hs_object_id: "19002270347",
+      hs_object_id: "19019092085",
       name: basic_attributes[:name]
     }
   end
