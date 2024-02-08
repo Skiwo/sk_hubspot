@@ -12,7 +12,7 @@ class TestContact < Minitest::Test
 
   def test_that_it_finds_by_property_name
     VCR.use_cassette("contacts/find_by_property_name") do
-      contacts, _error = Skiwo::Hubspot::Contact.find_by(firstname: "Jon")
+      contacts, _error = Skiwo::Hubspot::Contact.search(firstname: "Jon")
       refute_empty contacts
       refute_nil contacts.first.email
     end
