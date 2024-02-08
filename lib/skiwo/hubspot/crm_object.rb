@@ -16,6 +16,23 @@ module Skiwo
         @crm_object = object
       end
 
+      class << self
+        def inherited(klass)
+          super
+          children << klass
+        end
+
+        def for(object_type_id)
+          children.find { |crm_klass| crm_klass.object_type_id == object_type_id }
+        end
+
+        private
+
+        def children
+          @children ||= []
+        end
+      end
+
       def method_missing(meth, *args, &block)
         return crm_object.public_send(meth, *args, &block) if crm_object.respond_to?(meth)
         return crm_object.properties.fetch(meth.to_s) if crm_object.properties.key?(meth.to_s)

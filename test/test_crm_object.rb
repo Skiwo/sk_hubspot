@@ -7,16 +7,9 @@ class TestCrmObject < Minitest::Test
     assert_equal "CrmObject", Skiwo::Hubspot::CrmObject.object_type
   end
 
-  def test_it_respond_to_find
-    assert_respond_to Skiwo::Hubspot::CrmObject, :find
-  end
-
-  def test_it_respond_to_create
-    assert_respond_to Skiwo::Hubspot::CrmObject, :create
-  end
-
-  def test_it_respond_to_update
-    assert_respond_to Skiwo::Hubspot::CrmObject, :update
+  def test_it_returns_constant_for_object_type_id
+    assert_equal Skiwo::Hubspot::Contact, Skiwo::Hubspot::CrmObject.for("0-1")
+    assert_equal Skiwo::Hubspot::Company, Skiwo::Hubspot::CrmObject.for("0-2")
   end
 
   def test_it_returns_properties_for_object_type
