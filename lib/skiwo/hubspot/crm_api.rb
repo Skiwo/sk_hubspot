@@ -29,6 +29,7 @@ module Skiwo
       #  - options: Hash - { archived: true/false }
       # returns record
       def find(id, options: {})
+        options = { properties: default_properties, archived: false }.merge(options)
         error = nil
         response = basic_api.get_by_id(identifier_name.to_sym => id, **options) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
