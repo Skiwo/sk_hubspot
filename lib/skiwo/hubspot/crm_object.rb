@@ -5,20 +5,13 @@ module Skiwo
     ##
     # Base class for Hubspot's CRM Objects
     #
+    # Accepts a Hubspot CRM Object.
+    # It will delegate methods to the crm object.
     class CrmObject
-      attr_accessor :id, :properties, :properties_with_history, :created_at,
-                    :updated_at, :archived, :archived_at, :associations
+      attr_reader :crm_object
 
       def initialize(object)
-        @id = object.id
-        @properties = object.properties
-        @properties = object.properties
-        @properties_with_history = object.properties_with_history
-        @created_at = object.created_at
-        @updated_at = object.updated_at
-        @archived = object.archived
-        @archived_at = object.archived_at
-        @associations = object.associations
+        @crm_object = object
       end
 
       def self.object_type_id
@@ -31,6 +24,21 @@ module Skiwo
 
       def self.default_properties
         {}
+      end
+
+      def method_missing(meth, *args, &block)
+        return crm_object.public_send(meth, *args, &block) if crm_object.respond_to?(meth)
+        return crm_object.properties.fetch(meth.to_s) if crm_object.properties.key?(meth.to_s)
+
+        super
+      end
+
+      def respond_to_missing?(meth, include_private = false)
+        if crm_object.respond_to?(meth) || crm_object.properties.key?(meth.to_s)
+          true
+        else
+          super
+        end
       end
 
       ##
@@ -48,7 +56,7 @@ module Skiwo
         if error
           [nil, error]
         else
-          [response, error]
+          [new(response), error]
         end
       end
 
@@ -74,7 +82,8 @@ module Skiwo
         if error
           [nil, error]
         else
-          [response.results, error]
+          results = response.results.map { |record| new(record) }
+          [results, error]
         end
       end
 
@@ -94,7 +103,7 @@ module Skiwo
         if error
           [nil, error]
         else
-          [response, error]
+          [new(response), error]
         end
       end
 
@@ -115,7 +124,7 @@ module Skiwo
         if error
           [nil, error]
         else
-          [response, nil]
+          [new(response), nil]
         end
       end
 

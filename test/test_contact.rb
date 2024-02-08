@@ -10,10 +10,18 @@ class TestContact < Minitest::Test
     end
   end
 
+  def test_that_it_finds_by_property_name
+    VCR.use_cassette("contacts/find_by_property_name") do
+      contacts, _error = Skiwo::Hubspot::Contact.find_by(firstname: "Jon")
+      refute_empty contacts
+      refute_nil contacts.first.email
+    end
+  end
+
   def test_that_it_creates_one_contact
     VCR.use_cassette("contacts/create_one") do
       contact, _error = Skiwo::Hubspot::Contact.create(attributes: basic_attributes)
-      assert_equal basic_attributes[:email], contact.properties["email"]
+      assert_equal basic_attributes[:email], contact.email
     end
   end
 
@@ -25,8 +33,8 @@ class TestContact < Minitest::Test
       attributes = { firstname: first_name, platform_id: platform_id }
 
       contact, _error = Skiwo::Hubspot::Contact.update(object_id, attributes: attributes)
-      assert_equal attributes[:firstname], contact.properties["firstname"]
-      assert_equal attributes[:platform_id], contact.properties["platform_id"]
+      assert_equal attributes[:firstname], contact.firstname
+      assert_equal attributes[:platform_id], contact.platform_id
     end
   end
 
@@ -46,7 +54,7 @@ class TestContact < Minitest::Test
     VCR.use_cassette("contacts/find_by_platform_id") do
       platform_id = "57244c78-6900-44bc-8c96-863ec1e2b44f"
       contact, _error = Skiwo::Hubspot::Contact.find_by_platform_id(platform_id)
-      assert_equal platform_id, contact.properties["platform_id"]
+      assert_equal platform_id, contact.platform_id
     end
   end
 
