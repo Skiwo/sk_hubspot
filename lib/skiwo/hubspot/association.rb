@@ -19,7 +19,7 @@ module Skiwo
       end
 
       def self.association_type_id
-        raise NotImplementedError
+        raise NotImplementedError, "#{name} does not have a association_type_id"
       end
 
       def self.association_category

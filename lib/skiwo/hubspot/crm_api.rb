@@ -6,7 +6,7 @@ module Skiwo
     # Methods to query hubspot's crm api
     module CrmApi
       def object_type_id
-        raise NotImplementedError
+        raise NotImplementedError, "#{name} does not have a object_type_id"
       end
 
       def object_type
