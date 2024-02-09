@@ -46,8 +46,8 @@ module Skiwo
       def self.create(from_object:, to_object:, body:)
         error = nil
         response = batch_api.create(
-          from_object_type: from_object.class.object_type,
-          to_object_type: to_object.class.object_type, body: body
+          from_object_type: from_object.object_type,
+          to_object_type: to_object.object_type, body: body
         ) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end

@@ -33,6 +33,10 @@ module Skiwo
         end
       end
 
+      def object_type
+        self.class.object_type
+      end
+
       def method_missing(meth, *args, &block)
         return crm_object.public_send(meth, *args, &block) if crm_object.respond_to?(meth)
         return crm_object.properties.fetch(meth.to_s) if crm_object.properties.key?(meth.to_s)

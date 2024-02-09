@@ -4,7 +4,7 @@ require "test_helper"
 
 class TestCrmObject < Minitest::Test
   def test_object_type
-    assert_equal "CrmObject", Skiwo::Hubspot::CrmObject.object_type
+    assert_equal "CrmObject", Skiwo::Hubspot::CrmObject.new(nil).object_type
   end
 
   def test_it_returns_constant_for_object_type_id
