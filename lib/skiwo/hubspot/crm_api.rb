@@ -27,13 +27,17 @@ module Skiwo
       #
       #  - id: The object id of the record
       #  - options: Hash - { archived: true/false }
+      #  - block: yields any error to the block
+      #
       # returns record
-      def find(id, options: {})
+      def find(id, options: {}, &block)
         options = { properties: default_properties, archived: false }.merge(options)
         error = nil
         response = basic_api.get_by_id(object_type: object_type, object_id: id, **options) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
+
+        yield error and return if block && error
 
         if error
           [nil, error]
@@ -42,7 +46,7 @@ module Skiwo
         end
       end
 
-      def search(properties: default_properties, **options)
+      def search(properties: default_properties, **options, &block)
         filters = options.map { |key, value| { propertyName: key.to_s, value: value, operator: "EQ" } }
         body = { properties: properties, filterGroups: [{ filters: filters }] }
 
@@ -50,6 +54,8 @@ module Skiwo
         response = search_api.do_search(object_type: object_type, body: body) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
+
+        yield error and return if block && error
 
         if error
           [nil, error]
@@ -59,8 +65,10 @@ module Skiwo
         end
       end
 
-      def find_by_platform_id(platform_id)
+      def find_by_platform_id(platform_id, &block)
         results, error = search(platform_id: platform_id)
+
+        yield error and return if block && error
 
         if error
           [nil, error]
@@ -76,22 +84,26 @@ module Skiwo
       #   - attributes: Hash of attributes
       #
       # returns tuple with the updated record and error
-      def update(id, attributes: {})
+      def update(id, attributes: {}, &block)
         body = { properties: attributes }
         error = nil
         response = basic_api.update(object_type: object_type, object_id: id, body: body) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
+        yield error and return if block && error
+
         if error
           [nil, error]
         else
-          [new(response), nil]
+          [new(response), error]
         end
       end
 
-      def properties(object_type: self.object_type)
+      def properties(object_type: self.object_type, &block)
         properties, error = Skiwo::Hubspot.properties(object_type: object_type)
+
+        yield error and return if block && error
 
         if error
           [nil, error]
@@ -106,12 +118,14 @@ module Skiwo
       #  - attributes: Hash
       #
       # returns the new record
-      def create(attributes:)
+      def create(attributes:, &block)
         body = { properties: attributes }
         error = nil
         response = basic_api.create(object_type: object_type, body: body) do |err|
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
+
+        yield error and return if block && error
 
         if error
           [nil, error]

@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://api.hubapi.com/crm/v3/objects/Contact/999999999999
+    body:
+      encoding: UTF-8
+      string: '{"properties":{"firstname":"Benjamin","lastname":"Kristensen","email":"generic.testuser@skiwo.com","phone":"+47
+        39 79 85 40"}}'
+    headers:
+      User-Agent:
+      - hubspot-api-client-ruby; 17.2.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      Expect:
+      - ''
+  response:
+    status:
+      code: 404
+      message: ''
+    headers:
+      Date:
+      - Fri, 09 Feb 2024 12:40:13 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '104'
+      Cf-Ray:
+      - 852c2df81f160b59-OSL
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - origin
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '55'
+      X-Evy-Trace-Listener:
+      - listener_https
+      X-Evy-Trace-Route-Configuration:
+      - listener_https/all
+      X-Evy-Trace-Route-Service-Name:
+      - envoyset-translator
+      X-Evy-Trace-Served-By-Pod:
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-c7v6d
+      X-Evy-Trace-Virtual-Host:
+      - all
+      X-Hubspot-Correlation-Id:
+      - 4d3bb316-7880-4709-8513-563d56b1fe04
+      X-Hubspot-Notfound:
+      - 'true'
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499999'
+      X-Hubspot-Ratelimit-Interval-Milliseconds:
+      - '10000'
+      X-Hubspot-Ratelimit-Max:
+      - '150'
+      X-Hubspot-Ratelimit-Remaining:
+      - '149'
+      X-Hubspot-Ratelimit-Secondly:
+      - '15'
+      X-Hubspot-Ratelimit-Secondly-Remaining:
+      - '14'
+      X-Request-Id:
+      - 4d3bb316-7880-4709-8513-563d56b1fe04
+      X-Trace:
+      - 2B385E2EE8BD83F9850E17CC987774E6607017780B000000000000000000
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=LEYXJ41R8giiyD3FebP0n5Pg4tm4uDBMfNIq4%2Bi3zNB1312oL8iJf3YJgiRDlGwJ1bGbUxb1lc9zBlBGChQVo4%2FblI7YviSqzefhl1AhsQ8M79xDKJPpEiSFEKB60sMxSpmkrnoJJ8pcF6NR"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"error","message":"resource not found","correlationId":"4d3bb316-7880-4709-8513-563d56b1fe04"}'
+  recorded_at: Fri, 09 Feb 2024 12:40:13 GMT
+recorded_with: VCR 6.2.0

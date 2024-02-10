@@ -50,6 +50,22 @@ class TestContact < Minitest::Test
     end
   end
 
+  def test_that_it_yields_with_error
+    VCR.use_cassette("contacts/yields_with_error") do
+      object_id = "999999999999"
+      attributes = basic_attributes
+      attributes[:email] = Faker::Internet.email
+
+      error = nil
+      contact = Skiwo::Hubspot::Contact.update(object_id, attributes: basic_attributes) do |err|
+        error = err
+      end
+
+      assert_nil contact
+      assert_equal 404, error.code
+    end
+  end
+
   def test_that_it_finds_by_platform_id
     VCR.use_cassette("contacts/find_by_platform_id") do
       platform_id = "57244c78-6900-44bc-8c96-863ec1e2b44f"
