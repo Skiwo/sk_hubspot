@@ -11,9 +11,11 @@ module Skiwo
       extend Skiwo::Hubspot::CrmApi
 
       attr_reader :crm_object
+      attr_accessor :errors
 
       def initialize(object)
         @crm_object = object
+        @errors = []
       end
 
       class << self
@@ -35,6 +37,18 @@ module Skiwo
 
       def object_type
         self.class.object_type
+      end
+
+      def update(attributes)
+        response, error = self.class.update(id, attributes)
+
+        if error
+          errors << error
+          false
+        else
+          @crm_object = response
+          true
+        end
       end
 
       def method_missing(meth, *args, &block)

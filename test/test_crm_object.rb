@@ -12,6 +12,14 @@ class TestCrmObject < Minitest::Test
     assert_equal Skiwo::Hubspot::Company, Skiwo::Hubspot::CrmObject.for("0-2")
   end
 
+  def test_it_initializes_errors
+    assert_empty Skiwo::Hubspot::CrmObject.new(nil).errors
+  end
+
+  def test_it_respond_to_update
+    assert_respond_to Skiwo::Hubspot::CrmObject.new(nil), :update
+  end
+
   def test_it_returns_properties_for_object_type
     VCR.use_cassette("crm_object/properties") do
       properties, _error = Skiwo::Hubspot::CrmObject.properties(object_type: "Contact")
