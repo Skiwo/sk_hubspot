@@ -4,16 +4,16 @@ require "json"
 
 module Skiwo
   module Hubspot
-    class Error < StandardError # :nodoc:
+    class ApiError < StandardError # :nodoc:
       attr_reader :code, :message
 
       def initialize(code:, message:)
         super
         @code = code
-        @messag = message
+        @message = message
       end
 
-      def self.with_api_error(error)
+      def self.with(error)
         begin
           message = JSON.parse(error.response_body).fetch("message")
         rescue JSON::ParserError

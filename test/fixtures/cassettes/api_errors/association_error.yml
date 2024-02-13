@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.hubapi.com/crm/v4/associations/DontExist/DontExist/batch/create
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - hubspot-api-client-ruby; 17.2.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      Expect:
+      - ''
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Date:
+      - Tue, 13 Feb 2024 07:41:46 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '129'
+      Cf-Ray:
+      - 854b6e4c9b1f569d-OSL
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - origin
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '18'
+      X-Evy-Trace-Listener:
+      - listener_https
+      X-Evy-Trace-Route-Configuration:
+      - listener_https/all
+      X-Evy-Trace-Route-Service-Name:
+      - envoyset-translator
+      X-Evy-Trace-Served-By-Pod:
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-pxpfs
+      X-Evy-Trace-Virtual-Host:
+      - all
+      X-Hubspot-Correlation-Id:
+      - e3d372fd-3288-4dba-91f8-ec03b98439fd
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499994'
+      X-Hubspot-Ratelimit-Interval-Milliseconds:
+      - '10000'
+      X-Hubspot-Ratelimit-Max:
+      - '150'
+      X-Hubspot-Ratelimit-Remaining:
+      - '149'
+      X-Hubspot-Ratelimit-Secondly:
+      - '15'
+      X-Hubspot-Ratelimit-Secondly-Remaining:
+      - '14'
+      X-Request-Id:
+      - e3d372fd-3288-4dba-91f8-ec03b98439fd
+      X-Trace:
+      - 2B03277AE625AD369E67BD72BB9DC38165D8DC3C57000000000000000000
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=2f5umbXpBxGkeBAa%2FWX1CgkDljSFib0GglwEFGrbgEYhcovfslN9cO1cTNQ4BsJ1X5mHl2%2FBASyrXF8hI8cg5b8cusOmcZ5ufxGC6Z9zV14zBcAUVqScMRevvINBphlh"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"error","message":"Unable to infer object type from: DontExist","correlationId":"e3d372fd-3288-4dba-91f8-ec03b98439fd"}'
+  recorded_at: Tue, 13 Feb 2024 07:41:46 GMT
+recorded_with: VCR 6.2.0

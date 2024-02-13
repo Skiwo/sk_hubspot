@@ -5,7 +5,7 @@ require "dotenv/load"
 
 require_relative "hubspot/version"
 require_relative "hubspot/client"
-require_relative "hubspot/error"
+require_relative "hubspot/api_error"
 require_relative "hubspot/crm_api"
 require_relative "hubspot/association"
 require_relative "hubspot/contact_to_company_association"
@@ -23,10 +23,11 @@ module Skiwo
       client.crm
     end
 
+    # TODO: fix responder
     def self.properties(object_type:)
       error = nil
       properties = crm.properties.core_api.get_all(object_type: object_type) do |err|
-        error = Skiwo::Hubspot::Error.with_api_error(err)
+        error = Skiwo::Hubspot::ApiError.with(err)
       end
 
       if error

@@ -50,7 +50,7 @@ module Skiwo
           from_object_type: from_object_type,
           to_object_type: to_object_type,
           body: body
-        ) { |err| error = Skiwo::Hubspot::Error.with_api_error(err) }
+        ) { |err| error = Skiwo::Hubspot::ApiError.with(err) }
 
         # TODO: move this to a shared module
         yield error and return if block && error
@@ -69,7 +69,7 @@ module Skiwo
           from_object_type: from_object.object_type,
           to_object_type: to_object.object_type, body: body
         ) do |err|
-          error = Skiwo::Hubspot::Error.with_api_error(err)
+          error = Skiwo::Hubspot::ApiError.with(err)
         end
 
         yield error and return if block && error

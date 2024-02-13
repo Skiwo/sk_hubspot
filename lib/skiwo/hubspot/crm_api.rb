@@ -34,7 +34,7 @@ module Skiwo
         options = { properties: default_properties, archived: false }.merge(options)
         error = nil
         response = basic_api.get_by_id(object_type: object_type, object_id: id, **options) do |err|
-          error = Skiwo::Hubspot::Error.with_api_error(err)
+          error = Skiwo::Hubspot::ApiError.with(err)
         end
 
         respond_with(response: new(response), error: error, &block)
@@ -46,7 +46,7 @@ module Skiwo
 
         error = nil
         response = search_api.do_search(object_type: object_type, body: body) do |err|
-          error = Skiwo::Hubspot::Error.with_api_error(err)
+          error = Skiwo::Hubspot::ApiError.with(err)
         end
 
         results = response.results.map { |record| new(record) }
@@ -69,7 +69,7 @@ module Skiwo
         body = { properties: attributes }
         error = nil
         response = basic_api.update(object_type: object_type, object_id: id, body: body) do |err|
-          error = Skiwo::Hubspot::Error.with_api_error(err)
+          error = Skiwo::Hubspot::ApiError.with(err)
         end
 
         respond_with(response: new(response), error: error, &block)
@@ -90,7 +90,7 @@ module Skiwo
         body = { properties: attributes }
         error = nil
         response = basic_api.create(object_type: object_type, body: body) do |err|
-          error = Skiwo::Hubspot::Error.with_api_error(err)
+          error = Skiwo::Hubspot::ApiError.with(err)
         end
 
         respond_with(response: new(response), error: error, &block)
