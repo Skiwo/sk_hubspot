@@ -49,6 +49,21 @@ class TestCompany < Minitest::Test
     end
   end
 
+  def test_that_it_returns_associated_contacts
+    VCR.use_cassette("companies/list_contacts") do
+      company, _error = Skiwo::Hubspot::Company.find_by_platform_id(basic_attributes[:platform_id])
+      assert_kind_of Skiwo::Hubspot::Contact, company.contacts.first
+    end
+  end
+
+  def test_that_it_adds_a_contact
+    VCR.use_cassette("companies/add_contact") do
+      company, _error = Skiwo::Hubspot::Company.find("19019092085")
+      contact, _error = Skiwo::Hubspot::Contact.find("1")
+      assert company.add_contact(contact)
+    end
+  end
+
   private
 
   def basic_attributes

@@ -15,6 +15,27 @@ module Skiwo
       def self.default_properties
         %w[hs_object_id name domain createdate lastmodifieddate platform_id]
       end
+
+      def contacts
+        @contacts ||= load_associated(Contact)
+      end
+
+      ##
+      # Add contact to company
+      #
+      #  * +:contact+ - Skiwo::Hubspot::Contact
+      #
+      # returns true or false
+      def add_contact(contact)
+        association = Skiwo::Hubspot::CompanyToContactAssociation.new(from_object: self, to_object: contact)
+
+        if association.save
+          true
+        else
+          self.errors = errors + association.errors
+          false
+        end
+      end
     end
   end
 end
