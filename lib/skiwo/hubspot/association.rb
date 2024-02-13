@@ -43,6 +43,26 @@ module Skiwo
         self.class.create(from_object: from_object, to_object: to_object, body: to_h)
       end
 
+      def self.list(from_object_type:, to_object_type:, id:, &block)
+        body = { inputs: [{ id: id }] }
+        error = nil
+        response = batch_api.get_page(
+          from_object_type: from_object_type,
+          to_object_type: to_object_type,
+          body: body
+        ) { |err| error = Skiwo::Hubspot::Error.with_api_error(err) }
+
+        # TODO: move this to a shared module
+        yield error and return if block && error
+        return response.results if block
+
+        if error
+          [nil, error]
+        else
+          [response.results, nil]
+        end
+      end
+
       def self.create(from_object:, to_object:, body:, &block)
         error = nil
         response = batch_api.create(

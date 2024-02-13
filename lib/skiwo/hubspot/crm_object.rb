@@ -51,6 +51,40 @@ module Skiwo
         end
       end
 
+      ##
+      # Loads the associated objects
+      # Any errors will be added to the instance's errors.
+      #
+      #   - asscociated: Skiwo::Hubsport::CrmObject
+      #
+      # returns list of associated objects
+      def load_associated(associated)
+        associations = Skiwo::Hubspot::Association.list(
+          from_object_type: self.class.object_type,
+          to_object_type: associated.object_type,
+          id: id
+        ) { |err| errors << err }
+
+        if associations
+          ids = associations.first.to.map(&:to_object_id)
+
+          result = ids.map do |associated_id|
+            associated.find(associated_id) { |err| errors << err }
+          end
+          result.compact
+        else
+          []
+        end
+      end
+
+      def ==(other)
+        super || (
+          self.class == other.class &&
+          !id.nil? &&
+          id == other.id
+        )
+      end
+
       def method_missing(meth, *args, &block)
         return crm_object.public_send(meth, *args, &block) if crm_object.respond_to?(meth)
         return crm_object.properties.fetch(meth.to_s) if crm_object.properties.key?(meth.to_s)

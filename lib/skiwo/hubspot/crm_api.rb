@@ -37,13 +37,7 @@ module Skiwo
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
-        yield error and return if block && error
-
-        if error
-          [nil, error]
-        else
-          [new(response), error]
-        end
+        respond_with(response: new(response), error: error, &block)
       end
 
       def search(properties: default_properties, **options, &block)
@@ -55,26 +49,13 @@ module Skiwo
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
-        yield error and return if block && error
-
-        if error
-          [nil, error]
-        else
-          results = response.results.map { |record| new(record) }
-          [results, error]
-        end
+        results = response.results.map { |record| new(record) }
+        respond_with(response: results, error: error, &block)
       end
 
       def find_by_platform_id(platform_id, &block)
         results, error = search(platform_id: platform_id)
-
-        yield error and return if block && error
-
-        if error
-          [nil, error]
-        else
-          [results.first, error]
-        end
+        respond_with(response: results.first, error: error, &block)
       end
 
       ##
@@ -91,25 +72,12 @@ module Skiwo
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
-        yield error and return if block && error
-
-        if error
-          [nil, error]
-        else
-          [new(response), error]
-        end
+        respond_with(response: new(response), error: error, &block)
       end
 
       def properties(object_type: self.object_type, &block)
         properties, error = Skiwo::Hubspot.properties(object_type: object_type)
-
-        yield error and return if block && error
-
-        if error
-          [nil, error]
-        else
-          [properties, nil]
-        end
+        respond_with(response: properties, error: error, &block)
       end
 
       ##
@@ -125,12 +93,17 @@ module Skiwo
           error = Skiwo::Hubspot::Error.with_api_error(err)
         end
 
+        respond_with(response: new(response), error: error, &block)
+      end
+
+      def respond_with(response:, error:, &block)
         yield error and return if block && error
+        return response if block
 
         if error
           [nil, error]
         else
-          [new(response), error]
+          [response, nil]
         end
       end
 

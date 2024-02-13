@@ -15,7 +15,7 @@ module Skiwo
 
       def self.with_api_error(error)
         begin
-          message = JSON.parse(error.message)
+          message = JSON.parse(error.response_body).fetch("message")
         rescue JSON::ParserError
           message = { status: "error", message: error.message }
         end

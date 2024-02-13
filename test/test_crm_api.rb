@@ -42,4 +42,32 @@ class TestCrmApi < Minitest::Test
   def test_it_respond_to_update
     assert_respond_to CrmDummy, :update
   end
+
+  def test_it_respond_with_response_using_block
+    error = nil
+    response = CrmDummy.respond_with(response: "response", error: nil) { |e| error = e }
+    assert_equal "response", response
+    assert_nil error
+  end
+
+  def test_it_respond_with_response_without_block
+    response, error = CrmDummy.respond_with(response: "response", error: nil)
+    assert_equal "response", response
+    assert_nil error
+  end
+
+  def test_it_yields_error_and_return_nil
+    returned_error = nil
+    error = Skiwo::Hubspot::Error.new(code: "error", message: "FAILED")
+    response = CrmDummy.respond_with(response: "response", error: error) { |e| returned_error = e }
+    assert_equal error, returned_error
+    assert_nil response
+  end
+
+  def test_it_respond_with_nil_and_error
+    error = Skiwo::Hubspot::Error.new(code: "error", message: "FAILED")
+    response, returned_error = CrmDummy.respond_with(response: "response", error: error)
+    assert_equal error, returned_error
+    assert_nil response
+  end
 end

@@ -21,6 +21,10 @@ module Skiwo
       def add_company(company)
         _association = Skiwo::Hubspot::ContactToCompanyAssociation.new(from_object: self, to_object: company)
       end
+
+      def companies
+        @companies ||= load_associated(Company)
+      end
     end
   end
 end
