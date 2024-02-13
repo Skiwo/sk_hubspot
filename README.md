@@ -16,13 +16,12 @@ The Skiwo Hubspot gem is a wrapper for the `hubspot-api-client gem`.
 It provides convenient methods to Hubspot's crm api.
 
 ### Calling The Hubspot API
-You can pass a block to methods that calls the hubspot api to handle any errors.
-If you don't provide a block, the method returns a tuple with `[result_object, error]`
+You can pass a block to the methods that calls the hubspot api to handle any errors. If you don't provide a block, the method returns a tuple with `[result_object, error]`
 
 ### The CRM Object
-A successful request to the Hubspot crm api will result in one or more objects of type `Skiwo::Hubspot::CrmObject`.
-Crm objects like `Contact` and `Company` has instance methods for mutating the object on Hubspot.
-When working with instances, any errors can be accessed by calling `crm_object.errors`
+A successful request to the [Hubspot CRM API](https://developers.hubspot.com/docs/api/crm/understanding-the-crm) will  result in one or more objects of type `Skiwo::Hubspot::CrmObject`.
+
+The Skiwo Hubspot gem has subclasses of CrmObject's like `Contact` and `Company`. CRM objects have instance methods for mutating the corresponding object on Hubspot. When working with instances, any errors can be accessed by calling `crm_object.errors`
 
 ### Platform ID
 A reference from the Skiwo platform record and to the crm object on

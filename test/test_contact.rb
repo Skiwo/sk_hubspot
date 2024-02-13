@@ -88,6 +88,14 @@ class TestContact < Minitest::Test
     end
   end
 
+  def test_that_it_adds_a_company
+    VCR.use_cassette("contacts/add_company") do
+      company, _error = Skiwo::Hubspot::Company.find("19019092085")
+      contact, _error = Skiwo::Hubspot::Contact.find("1")
+      assert contact.add_company(company)
+    end
+  end
+
   private
 
   def basic_attributes
