@@ -18,8 +18,21 @@ module Skiwo
            lastmodifieddate platform_id associatedcompanyid]
       end
 
+      ##
+      # Add company to contact
+      #
+      #  * +:company+ - Skiwo::Hubspot::Company
+      #
+      # returns true or false
       def add_company(company)
-        _association = Skiwo::Hubspot::ContactToCompanyAssociation.new(from_object: self, to_object: company)
+        association = Skiwo::Hubspot::ContactToCompanyAssociation.new(from_object: self, to_object: company)
+
+        if association.save
+          true
+        else
+          @errors = errors + association.errors
+          false
+        end
       end
 
       def companies

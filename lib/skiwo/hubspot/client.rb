@@ -7,7 +7,7 @@ module Skiwo
     ##
     # Delegator for the Hubspot::Client
     #
-    #   - access_token: Defaults to ENV["HUBSPOT_TOKEN"]
+    #   * +:access_token+ - Defaults to ENV["HUBSPOT_TOKEN"]
     #
     class Client
       attr_reader :access_token

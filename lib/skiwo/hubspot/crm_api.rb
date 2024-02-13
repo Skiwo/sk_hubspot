@@ -25,11 +25,11 @@ module Skiwo
       ##
       # Find one record on Hubspot
       #
-      #  - id: The object id of the record
-      #  - options: Hash - { archived: true/false }
-      #  - block: yields any error to the block
+      #  * +:id+ - The object id of the record
+      #  * +:options+ - Hash - { archived: true/false }
+      #  * +:block+ - yields any error to the block
       #
-      # returns record
+      # returns a new instance of type Skiwo::Hubspot::CrmObject
       def find(id, options: {}, &block)
         options = { properties: default_properties, archived: false }.merge(options)
         error = nil
@@ -61,8 +61,8 @@ module Skiwo
       ##
       # Update record on Hubspot
       #
-      #   - id: The object id of the record
-      #   - attributes: Hash of attributes
+      #   * +:id+ - The object id of the record
+      #   * +:attributes+ - Hash of attributes
       #
       # returns tuple with the updated record and error
       def update(id, attributes: {}, &block)
@@ -83,7 +83,7 @@ module Skiwo
       ##
       # Create a new record on hubspot
       #
-      #  - attributes: Hash
+      #  * +:attributes+ - Hash
       #
       # returns the new record
       def create(attributes:, &block)

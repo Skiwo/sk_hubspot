@@ -23,7 +23,8 @@ module Skiwo
       client.crm
     end
 
-    # TODO: fix responder
+    # TODO: fix responder or make documentation.
+    # Internal use only?
     def self.properties(object_type:)
       error = nil
       properties = crm.properties.core_api.get_all(object_type: object_type) do |err|

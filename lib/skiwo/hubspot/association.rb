@@ -5,17 +5,18 @@ module Skiwo
     ##
     # Base class to handle associations between hubspot crm objects
     #
-    #  - from_object: CrmObject
-    #  - to_object: CrmObject
+    #  * +:from_object+ - CrmObject
+    #  * +:to_object+ - CrmObject
     #
     class Association
       ASSOCIATION_CATEGORY = "HUBSPOT_DEFINED"
 
-      attr_accessor :from_object, :to_object
+      attr_accessor :from_object, :to_object, :errors
 
       def initialize(from_object:, to_object:)
         @from_object = from_object
         @to_object = to_object
+        @errors = []
       end
 
       def self.association_type_id
@@ -40,7 +41,18 @@ module Skiwo
       end
 
       def save
-        self.class.create(from_object: from_object, to_object: to_object, body: to_h)
+        result, error = self.class.create(
+          from_object: from_object,
+          to_object: to_object,
+          body: to_h
+        )
+
+        if result
+          true
+        else
+          errors << error
+          false
+        end
       end
 
       def self.list(from_object_type:, to_object_type:, id:, &block)

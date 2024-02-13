@@ -5,7 +5,8 @@ module Skiwo
     ##
     # Base class for Hubspot's CRM Objects
     #
-    # Accepts a Hubspot CRM Object.
+    #  * +:object+ - A Hubspot Crm Object
+    #
     # It will delegate methods to the crm object.
     class CrmObject
       extend Skiwo::Hubspot::CrmApi
@@ -55,7 +56,7 @@ module Skiwo
       # Loads the associated objects
       # Any errors will be added to the instance's errors.
       #
-      #   - asscociated: Skiwo::Hubsport::CrmObject
+      #   * +:asscociated+ - Skiwo::Hubsport::CrmObject
       #
       # returns list of associated objects
       def load_associated(associated)

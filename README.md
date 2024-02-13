@@ -15,11 +15,12 @@ If bundler is not being used to manage dependencies, install the gem by executin
 The Skiwo Hubspot gem is a wrapper for the `hubspot-api-client gem`.
 It provides convenient methods to Hubspot's crm api.
 
+### Calling The Hubspot API
 You can pass a block to methods that calls the hubspot api to handle any errors.
 If you don't provide a block, the method returns a tuple with `[result_object, error]`
 
 ### The CRM Object
-A successful request to Hubspot's crm api will result in one or more objects of type `Skiwo::Hubspot::CrmObject`.
+A successful request to the Hubspot crm api will result in one or more objects of type `Skiwo::Hubspot::CrmObject`.
 Crm objects like `Contact` and `Company` has instance methods for mutating the object on Hubspot.
 When working with instances, any errors can be accessed by calling `crm_object.errors`
 
@@ -57,11 +58,14 @@ puts contact.email
 **Example: create a new contact on Hubspot**
 
 ```ruby
-# First check if the record exists:
+# Note: you can't create two records of the same type 
+# on Hubspot with the same platform id
 contact = Skiwo::Hubspot::Contact.find_by_platform_id(platform_id) { |error| fail error }
 
-attributes = { firstname: "Don", lastname: "Johnson", email: "dennis@example.com" }
-contact = Skiwo::Hubspot::Contact.create(attributes: attributes) { |error| fail error }
+unless contact
+  attributes = { firstname: "Don", lastname: "Johnson", email: "dennis@example.com" }
+  contact = Skiwo::Hubspot::Contact.create(attributes: attributes) { |error| fail error }
+end
 ```
 
 ### Update an object on Hubspot
@@ -85,32 +89,11 @@ can be associated to one or more contacts.
 company = Skiwo::Hubspot::Company.find(company_id)
 contact = Skiwo::Hubspot::Contact.find(contact_id)
 association = ContactToCompanyAssociation.new(from_object: contact, to_object: company)
-association.save
 
+puts association.errors unless association.save
 
 # or
-contact.add_company(company)
-
-```
-You can create your own associations with:
-```ruby
-association_category = "HUBSPOT_DEFINED"
-association_type_id = 279
-body = { inputs: [
-  { "types": [
-      {
-        "associationCategory": association_category,
-        "associationTypeId": association_type_id
-      }
-    ],
-    "from": { "id": contact.id },
-    "to": { "id": company.id } }
-] }
-
-assocation = Skiwo::Hubspot::Assocation.create(
-  from_object: "contact",
-  to_object: "company",
-  body: body) { |error| fail error }
+puts contact.errors unless contact.add_company(company)
 
 ```
 ## Development
