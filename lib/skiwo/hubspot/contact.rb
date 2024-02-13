@@ -30,7 +30,7 @@ module Skiwo
         if association.save
           true
         else
-          @errors = errors + association.errors
+          self.errors = errors + association.errors
           false
         end
       end
