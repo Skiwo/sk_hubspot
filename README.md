@@ -1,4 +1,4 @@
-## Skiwo Hubspot
+# Skiwo Hubspot
 
 ## Installation
 
@@ -58,12 +58,12 @@ puts contact.email
 **Example: create a new contact on Hubspot**
 
 ```ruby
-# Note: you can't create two records of the same type 
+# Note: you can't create two records of the same type
 # on Hubspot with the same platform id
 contact = Skiwo::Hubspot::Contact.find_by_platform_id(platform_id) { |error| fail error }
 
 unless contact
-  attributes = { firstname: "Don", lastname: "Johnson", email: "dennis@example.com" }
+  attributes = { firstname: "Don", lastname: "Johnson", email: "don@example.com" }
   contact = Skiwo::Hubspot::Contact.create(attributes: attributes) { |error| fail error }
 end
 ```
@@ -95,6 +95,22 @@ puts association.errors unless association.save
 # or
 puts contact.errors unless contact.add_company(company)
 
+```
+
+**Create Contact with associated Company in one request**
+
+It is possible to use the property `associatedcompanyid` to associate one company with a contact when the contact is first created. If the company is set on creation it will be labeled as the primary company automatically by Hubspot.
+
+```ruby
+company = Skiwo::Hubspot::Company.find_by_platform_id(platform_id) { |error| fail error }
+attributes = { 
+  firstname: "Don", 
+  lastname: "Johnson", 
+  email: "don@example.com",  
+  associatedcompanyid: company.id 
+}
+
+contact = Skiwo::Hubspot::Contact.create(attributes: attributes) { |error| fail error }
 ```
 ## Development
 
