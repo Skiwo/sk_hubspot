@@ -7,10 +7,6 @@ class CrmDummy
 end
 
 class TestCrmApi < Minitest::Test
-  def test_it_respond_to_object_type_id
-    assert_respond_to CrmDummy, :object_type_id
-  end
-
   def test_it_respond_to_object_type
     assert_respond_to CrmDummy, :object_type
   end

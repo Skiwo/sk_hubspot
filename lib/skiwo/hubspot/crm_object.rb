@@ -14,12 +14,11 @@ module Skiwo
       attr_reader :crm_object
       attr_accessor :errors
 
-      def initialize(object)
-        @crm_object = object
-        @errors = []
-      end
-
       class << self
+        def object_type_id
+          raise NotImplementedError, "#{name} does not have a object_type_id"
+        end
+
         def inherited(klass)
           super
           children << klass
@@ -34,6 +33,11 @@ module Skiwo
         def children
           @children ||= []
         end
+      end
+
+      def initialize(object)
+        @crm_object = object
+        @errors = []
       end
 
       def object_type

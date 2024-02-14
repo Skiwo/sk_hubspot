@@ -5,10 +5,6 @@ module Skiwo
     ##
     # Methods to query hubspot's crm api
     module CrmApi
-      def object_type_id
-        raise NotImplementedError, "#{name} does not have a object_type_id"
-      end
-
       def object_type
         name.demodulize
       end
@@ -62,11 +58,11 @@ module Skiwo
       # Update record on Hubspot
       #
       #   * +:id+ - The object id of the record
-      #   * +:attributes+ - Hash of attributes
+      #   * +:properties+ - Hash of properties
       #
-      # returns tuple with the updated record and error
-      def update(id, attributes: {}, &block)
-        body = { properties: attributes }
+      # returns a tuple with the updated record and any error
+      def update(id, properties: {}, &block)
+        body = { properties: properties }
         error = nil
         response = basic_api.update(object_type: object_type, object_id: id, body: body) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)
@@ -83,11 +79,12 @@ module Skiwo
       ##
       # Create a new record on hubspot
       #
-      #  * +:attributes+ - Hash
+      #  * +:properties+ - Hash with properties
+      #  * +:associations+ - Array of associations options
       #
-      # returns the new record
-      def create(attributes:, &block)
-        body = { properties: attributes }
+      # returns a tuple with the new record and any error
+      def create(properties:, associations: {}, &block)
+        body = { properties: properties, associations: associations }
         error = nil
         response = basic_api.create(object_type: object_type, body: body) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)

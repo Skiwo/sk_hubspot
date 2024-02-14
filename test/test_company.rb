@@ -13,7 +13,7 @@ class TestCompany < Minitest::Test
 
   def test_that_it_creates_one_company
     VCR.use_cassette("companies/create_one") do
-      company, _error = Skiwo::Hubspot::Company.create(attributes: basic_attributes)
+      company, _error = Skiwo::Hubspot::Company.create(properties: basic_attributes)
       refute_nil company
       assert_equal basic_attributes[:domain], company.properties["domain"]
     end
@@ -25,7 +25,7 @@ class TestCompany < Minitest::Test
       name = "#{sample_company[:name]} Updated"
       attributes = { name: name }
 
-      company, _error = Skiwo::Hubspot::Company.update(object_id, attributes: attributes)
+      company, _error = Skiwo::Hubspot::Company.update(object_id, properties: attributes)
       assert_equal attributes[:name], company.properties["name"]
     end
   end
@@ -35,7 +35,7 @@ class TestCompany < Minitest::Test
       object_id = "999999999999"
       attributes = { name: Faker::Company.name }
 
-      company, error = Skiwo::Hubspot::Company.update(object_id, attributes: attributes)
+      company, error = Skiwo::Hubspot::Company.update(object_id, properties: attributes)
       assert_nil company
       assert_equal 404, error.code
     end

@@ -63,7 +63,7 @@ contact = Skiwo::Hubspot::Contact.find_by_platform_id(platform_id) { |error| fai
 
 unless contact
   attributes = { firstname: "Don", lastname: "Johnson", email: "don@example.com" }
-  contact = Skiwo::Hubspot::Contact.create(attributes: attributes) { |error| fail error }
+  contact = Skiwo::Hubspot::Contact.create(properties: attributes) { |error| fail error }
 end
 ```
 
@@ -82,7 +82,7 @@ end
 ### Associations
 Hubspot has the concept of associations between crm objects.
 A contact can be associated to one or more companies and a company
-can be associated to one or more contacts.
+to one or more contacts.
 
 ```ruby
 company = Skiwo::Hubspot::Company.find(company_id)
@@ -95,6 +95,18 @@ puts association.errors unless association.save
 puts contact.errors unless contact.add_company(company)
 
 ```
+You can pass a hash as specified in the documentation when creating a crm object.
+
+```ruby
+associations = [{"types":[{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":0}],"to":{"id":"string"}}]
+properties = { ... }
+
+contact = Skiwo::Hubspot::Contact.create(
+properties: properties,
+associations: associations
+) do { |err| fail err }
+```
+
 
 **Create Contact with associated Company in one request**
 
@@ -109,7 +121,7 @@ attributes = {
   associatedcompanyid: company.id 
 }
 
-contact = Skiwo::Hubspot::Contact.create(attributes: attributes) { |error| fail error }
+contact = Skiwo::Hubspot::Contact.create(properties: attributes) { |error| fail error }
 ```
 ## Development
 

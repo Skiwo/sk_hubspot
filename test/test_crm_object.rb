@@ -5,6 +5,10 @@ require "test_helper"
 # class DummyCrmObject < Skiwo::Hubspot::CrmObject; end
 
 class TestCrmObject < Minitest::Test
+  def test_it_respond_to_object_type_id
+    assert_respond_to Skiwo::Hubspot::CrmObject, :object_type_id
+  end
+
   def test_object_type
     assert_equal "CrmObject", Skiwo::Hubspot::CrmObject.new(nil).object_type
   end

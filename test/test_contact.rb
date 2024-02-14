@@ -27,7 +27,7 @@ class TestContact < Minitest::Test
 
   def test_that_it_creates_one_contact
     VCR.use_cassette("contacts/create_one") do
-      contact, _error = Skiwo::Hubspot::Contact.create(attributes: basic_attributes)
+      contact, _error = Skiwo::Hubspot::Contact.create(properties: basic_attributes)
       assert_equal basic_attributes[:email], contact.email
     end
   end
@@ -39,7 +39,7 @@ class TestContact < Minitest::Test
       platform_id = "this-is-a-test-platform-id"
       attributes = { firstname: first_name, platform_id: platform_id }
 
-      contact, _error = Skiwo::Hubspot::Contact.update(object_id, attributes: attributes)
+      contact, _error = Skiwo::Hubspot::Contact.update(object_id, properties: attributes)
       assert_equal attributes[:firstname], contact.firstname
       assert_equal attributes[:platform_id], contact.platform_id
     end
@@ -51,7 +51,7 @@ class TestContact < Minitest::Test
       attributes = basic_attributes
       attributes[:email] = Faker::Internet.email
 
-      contact, error = Skiwo::Hubspot::Contact.update(object_id, attributes: basic_attributes)
+      contact, error = Skiwo::Hubspot::Contact.update(object_id, properties: basic_attributes)
       assert_nil contact
       assert_equal 404, error.code
     end
@@ -64,7 +64,7 @@ class TestContact < Minitest::Test
       attributes[:email] = Faker::Internet.email
 
       error = nil
-      contact = Skiwo::Hubspot::Contact.update(object_id, attributes: basic_attributes) do |err|
+      contact = Skiwo::Hubspot::Contact.update(object_id, properties: basic_attributes) do |err|
         error = err
       end
 
