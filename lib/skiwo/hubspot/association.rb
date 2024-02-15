@@ -13,7 +13,7 @@ module Skiwo
 
       attr_accessor :from_object, :to_object, :errors
 
-      def initialize(from_object:, to_object:)
+      def initialize(to_object:, from_object: nil)
         @from_object = from_object
         @to_object = to_object
         @errors = []
@@ -28,16 +28,9 @@ module Skiwo
       end
 
       def to_h
-        { inputs: [
-          { "types": [
-              {
-                "associationCategory": self.class.association_category,
-                "associationTypeId": self.class.association_type_id
-              }
-            ],
-            "from": { "id": from_object.id },
-            "to": { "id": to_object.id } }
-        ] }
+        input = { "types": types, "to": { "id": to_object.id } }
+        input["from"] = { "id": from_object.id } if from_object
+        input
       end
 
       def save
@@ -95,6 +88,17 @@ module Skiwo
 
       def self.batch_api
         Skiwo::Hubspot.crm.associations.v4.batch_api
+      end
+
+      private
+
+      def types
+        [
+          {
+            "associationCategory": self.class.association_category,
+            "associationTypeId": self.class.association_type_id
+          }
+        ]
       end
     end
   end
