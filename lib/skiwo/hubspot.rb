@@ -4,6 +4,7 @@ require "active_support/inflector"
 require "dotenv/load"
 
 require_relative "hubspot/version"
+require_relative "hubspot/configuration"
 require_relative "hubspot/client"
 require_relative "hubspot/api_error"
 require_relative "hubspot/crm_api"
@@ -17,6 +18,15 @@ require_relative "hubspot/deal"
 
 module Skiwo
   module Hubspot # :nodoc:
+    class << self
+      attr_accessor :configuration
+
+      def configure
+        self.configuration ||= Configuration.new
+        yield(configuration)
+      end
+    end
+
     def self.client
       @client ||= Skiwo::Hubspot::Client.new
     end
