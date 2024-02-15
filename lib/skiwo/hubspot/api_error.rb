@@ -5,12 +5,11 @@ require "json"
 module Skiwo
   module Hubspot
     class ApiError < StandardError # :nodoc:
-      attr_reader :code, :message
+      attr_reader :code
 
       def initialize(code:, message:)
-        super
+        super(message)
         @code = code
-        @message = message
       end
 
       def self.with(error)
