@@ -1,0 +1,249 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hubapi.com/crm/v3/objects/Contact/1?archived=false&properties=hs_object_id,createdate,lastmodifieddate,firstname,lastname,email,phone,lifecyclestage,hs_lead_status,associatedcompanyid,platform_id,platform_url
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - hubspot-api-client-ruby; 17.2.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 15 Feb 2024 10:31:17 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Cf-Ray:
+      - 855ce15e6d420b55-OSL
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - origin
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '42'
+      X-Evy-Trace-Listener:
+      - listener_https
+      X-Evy-Trace-Route-Configuration:
+      - listener_https/all
+      X-Evy-Trace-Route-Service-Name:
+      - envoyset-translator
+      X-Evy-Trace-Served-By-Pod:
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-q27s2
+      X-Evy-Trace-Virtual-Host:
+      - all
+      X-Hubspot-Correlation-Id:
+      - 9587878f-1b04-4c13-b241-677228612c85
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499917'
+      X-Hubspot-Ratelimit-Interval-Milliseconds:
+      - '10000'
+      X-Hubspot-Ratelimit-Max:
+      - '150'
+      X-Hubspot-Ratelimit-Remaining:
+      - '149'
+      X-Hubspot-Ratelimit-Secondly:
+      - '15'
+      X-Hubspot-Ratelimit-Secondly-Remaining:
+      - '14'
+      X-Request-Id:
+      - 9587878f-1b04-4c13-b241-677228612c85
+      X-Trace:
+      - 2B8B0E472EA5214B7983113D5534F33B54BDCB009D000000000000000000
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=DqpKlYQ2Pw9XKKPIdWwElJHvHwWAtLMLvEOsohs5wPlR%2FfMHE2u0z0oqCtj3qXqDblMK2I1OIUG6x%2F6AuROTStQgAcB4Y3lQDYgO2Vh8P8rCy43r8ZPeKSulO9pvU5e5"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"1","properties":{"associatedcompanyid":"9406789183","createdate":"2021-02-02T20:06:14.733Z","email":"emailmaria@hubspot.com","firstname":"Maria
+        Updated","hs_lead_status":"NEW","hs_object_id":"1","lastmodifieddate":"2024-02-15T09:27:51.628Z","lastname":"Johnson
+        (Sample Contact)","lifecyclestage":"opportunity","phone":null,"platform_id":"this-is-a-test-platform-id"},"createdAt":"2021-02-02T20:06:14.733Z","updatedAt":"2024-02-15T09:27:51.628Z","archived":false}'
+  recorded_at: Thu, 15 Feb 2024 10:31:17 GMT
+- request:
+    method: get
+    uri: https://api.hubapi.com/crm/v3/objects/Company/19019092085?archived=false&properties=hs_object_id,createdate,lastmodifieddate,name,domain,lifecyclestage,hs_lead_status,platform_id,platform_url,platform_last_activity_date,platform_industry,platform_business_activity,org_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - hubspot-api-client-ruby; 17.2.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 15 Feb 2024 10:31:17 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Cf-Ray:
+      - 855ce15fde5c0b55-OSL
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - origin
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '48'
+      X-Evy-Trace-Listener:
+      - listener_https
+      X-Evy-Trace-Route-Configuration:
+      - listener_https/all
+      X-Evy-Trace-Route-Service-Name:
+      - envoyset-translator
+      X-Evy-Trace-Served-By-Pod:
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-mt98x
+      X-Evy-Trace-Virtual-Host:
+      - all
+      X-Hubspot-Correlation-Id:
+      - 3705b6ce-4655-4480-afd2-f14bbddeb061
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499916'
+      X-Hubspot-Ratelimit-Interval-Milliseconds:
+      - '10000'
+      X-Hubspot-Ratelimit-Max:
+      - '150'
+      X-Hubspot-Ratelimit-Remaining:
+      - '148'
+      X-Hubspot-Ratelimit-Secondly:
+      - '15'
+      X-Hubspot-Ratelimit-Secondly-Remaining:
+      - '14'
+      X-Request-Id:
+      - 3705b6ce-4655-4480-afd2-f14bbddeb061
+      X-Trace:
+      - 2B761F9AD315903567296A09667B576490764DC92B000000000000000000
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=CIzLgRNY4o%2BYyK6izjC%2BDY5Xv%2BWToF7cP85pEVpwHC3K6%2BwvvJMjGN%2BIH1XunxCZZBpzCdb6wK0CJz%2BsCG5C5L%2FOUFDQBjdDWhsP4wqQJnOQKkhEaMb4a%2FdAfUMkEIDl"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"19019092085","properties":{"createdate":"2024-02-08T09:40:02.478Z","domain":"test.skiwo.com","hs_lastmodifieddate":"2024-02-15T09:27:53.730Z","hs_lead_status":null,"hs_object_id":"19019092085","lifecyclestage":"opportunity","name":"Skiwo
+        Sample Company Updated","org_id":null,"platform_id":"test-platform-id"},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-15T09:27:53.730Z","archived":false}'
+  recorded_at: Thu, 15 Feb 2024 10:31:17 GMT
+- request:
+    method: post
+    uri: https://api.hubapi.com/crm/v3/objects/Deal
+    body:
+      encoding: UTF-8
+      string: '{"properties":{"dealname":"Test Deal via API","amount":"1000.00","pipeline":"3954956","dealstage":"13253661","hubspot_owner_id":"609225610"},"associations":[{"to":{"id":"1"},"types":[{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":3}]},{"to":{"id":"19019092085"},"types":[{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":341}]}]}'
+    headers:
+      User-Agent:
+      - hubspot-api-client-ruby; 17.2.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      Expect:
+      - ''
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      Date:
+      - Thu, 15 Feb 2024 10:31:18 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Location:
+      - https://api.hubapi.com/crm/v3/objects/Deal/17541446987
+      Cf-Ray:
+      - 855ce161e8470b55-OSL
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - origin
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '327'
+      X-Evy-Trace-Listener:
+      - listener_https
+      X-Evy-Trace-Route-Configuration:
+      - listener_https/all
+      X-Evy-Trace-Route-Service-Name:
+      - envoyset-translator
+      X-Evy-Trace-Served-By-Pod:
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-9ch42
+      X-Evy-Trace-Virtual-Host:
+      - all
+      X-Hubspot-Correlation-Id:
+      - 9bfdfd87-9d66-4347-a133-b1636bfd8d8a
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499915'
+      X-Hubspot-Ratelimit-Interval-Milliseconds:
+      - '10000'
+      X-Hubspot-Ratelimit-Max:
+      - '150'
+      X-Hubspot-Ratelimit-Remaining:
+      - '147'
+      X-Hubspot-Ratelimit-Secondly:
+      - '15'
+      X-Hubspot-Ratelimit-Secondly-Remaining:
+      - '14'
+      X-Request-Id:
+      - 9bfdfd87-9d66-4347-a133-b1636bfd8d8a
+      X-Trace:
+      - 2BAC81CA5400E95A3579B06EAFFF3DBD05073EABCA000000000000000000
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=p1QxNzy3LVbWzC%2BcnxGrC9aYKUnPWIT%2B8fQPpVWaji%2BcOVaBwEhJKLuwXZm5maT%2BwI%2BIkR3p2elHwBhSseA4SHoYgqfm5Euw72gM%2BzjOtWVRUIcp%2B10EDUP5YvUfQIEt"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"17541446987","properties":{"amount":"1000.00","amount_in_home_currency":"1000.00","createdate":"2024-02-15T10:31:18.179Z","days_to_close":"0","dealname":"Test
+        Deal via API","dealstage":"13253661","hs_all_owner_ids":"609225610","hs_closed_amount":"0","hs_closed_amount_in_home_currency":"0","hs_closed_won_count":"0","hs_createdate":"2024-02-15T10:31:18.179Z","hs_days_to_close_raw":"0","hs_deal_stage_probability_shadow":"0.1000000000000000055511151231257827021181583404541015625","hs_forecast_amount":"1000.00","hs_is_active_shared_deal":"false","hs_is_closed":"false","hs_is_closed_won":"false","hs_is_deal_split":"false","hs_is_open_count":"1","hs_lastmodifieddate":"2024-02-15T10:31:18.179Z","hs_object_id":"17541446987","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_projected_amount":"0","hs_projected_amount_in_home_currency":"0","hs_user_ids_of_all_owners":"61794894","hubspot_owner_assigneddate":"2024-02-15T10:31:18.179Z","hubspot_owner_id":"609225610","pipeline":"3954956"},"createdAt":"2024-02-15T10:31:18.179Z","updatedAt":"2024-02-15T10:31:18.179Z","archived":false}'
+  recorded_at: Thu, 15 Feb 2024 10:31:18 GMT
+recorded_with: VCR 6.2.0

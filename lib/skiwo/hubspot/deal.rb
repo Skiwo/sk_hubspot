@@ -14,6 +14,10 @@ module Skiwo
         OBJECT_TYPE_ID
       end
 
+      def self.default_properties
+        super + %w[dealname amount pipeline closedate dealstage hubspot_owner_id]
+      end
+
       def contacts
         @contacts ||= load_associated(Contact)
       end

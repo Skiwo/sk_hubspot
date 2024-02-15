@@ -25,6 +25,19 @@ module Skiwo
       client.crm
     end
 
+    def self.owners
+      error = nil
+      owners = crm.owners.owners_api.get_page(limit: 100, archived: false) do |err|
+        error = Skiwo::Hubspot::ApiError.with(err)
+      end
+
+      if error
+        [nil, error]
+      else
+        [owners.results, nil]
+      end
+    end
+
     # TODO: fix responder or make documentation.
     # Internal use only?
     def self.properties(object_type:)
