@@ -15,26 +15,40 @@ If bundler is not being used to manage dependencies, install the gem by executin
 The Skiwo Hubspot gem is a wrapper for the `hubspot-api-client gem`.
 It provides convenient methods to Hubspot's crm api.
 
-### Calling The Hubspot API
-You can pass a block to the methods that calls the hubspot api to handle any errors. If you don't provide a block, the method returns a tuple with `[result_object, error]`
+### Configuration
+The `Skiwo::Hubspot::Client` will look for `ENV['HUBSPOT_TOKEN']` to get the `access_token`.
+It can also be configured like this:
+
+```ruby
+Skiwo::Hubspot.configure do |config|
+  config.access_token = 'some-access-token'
+  config.default_deal_owner_id = 'some-user-id-on-hubspot'
+  config.default_pipeline_id = 'some-pipeline-id-on-hubspot'
+end
+```
 
 ### The CRM Object
 A successful request to the [Hubspot CRM API](https://developers.hubspot.com/docs/api/crm/understanding-the-crm) will  result in one or more objects of type `Skiwo::Hubspot::CrmObject`.
 
-The Skiwo Hubspot gem has subclasses of CrmObject's like `Contact` and `Company`. CRM objects have instance methods for mutating the corresponding object on Hubspot. When working with instances, any errors can be accessed by calling `crm_object.errors`
+The Skiwo Hubspot gem has subclasses of CrmObject's like `Contact`,`Company` and `Deal`.
+CRM objects have instance methods for mutating the corresponding object on Hubspot.
+When working with instances, any errors can be accessed by calling `crm_object.errors`
 
 ### Platform ID
 A reference from the Skiwo platform record and to the crm object on
-Hubspot is set via the custom propertey named `platform_id` on Hubspot.
+Hubspot is set via the custom property named `platform_id` on Hubspot.
 
 Example:
 
 - Manymore: Account.id => Hubspot::Contact.platform_id
 - Salita: Person.id => Hubspot::Contact.platform_id
+- Salita: Order.id => Hubspot::Deal.platform_id
 
-Use `Skiwo::Hubspot::Contact.find_by_platform_id(id)` to find the record on Hubspot.
+Example: `Skiwo::Hubspot::Contact.find_by_platform_id(id)` to find the record on Hubspot.
 
 ### Find Objects on Hubspot
+
+You can pass a block to the methods that calls the hubspot api to handle any errors. If you don't provide a block, the method returns a tuple with `[result_object, error]`
 
 **Example: Find one contact by the hubspot object id**
 
@@ -52,7 +66,7 @@ end
 puts contact.email
 ```
 
-### Create an object on Hubspot
+### Create objects on Hubspot
 
 **Example: create a new contact on Hubspot**
 
@@ -89,10 +103,18 @@ company = Skiwo::Hubspot::Company.find(company_id)
 contact = Skiwo::Hubspot::Contact.find(contact_id)
 association = ContactToCompanyAssociation.new(from_object: contact, to_object: company)
 
-puts association.errors unless association.save
+if association.save
+  ...
+else
+  puts association.errors 
+end
 
 # or
-puts contact.errors unless contact.add_company(company)
+if contact.add_company(company)
+  ...
+else 
+  puts contact.errors 
+end
 
 ```
 You can pass a hash as specified in the documentation when creating a crm object.
@@ -114,11 +136,11 @@ It is possible to use the property `associatedcompanyid` to associate one compan
 
 ```ruby
 company = Skiwo::Hubspot::Company.find_by_platform_id(platform_id) { |error| fail error }
-attributes = { 
-  firstname: "Don", 
-  lastname: "Johnson", 
-  email: "don@example.com",  
-  associatedcompanyid: company.id 
+attributes = {
+  firstname: "Don",
+  lastname: "Johnson",
+  email: "don@example.com",
+  associatedcompanyid: company.id
 }
 
 contact = Skiwo::Hubspot::Contact.create(properties: attributes) { |error| fail error }
