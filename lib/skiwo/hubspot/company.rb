@@ -3,8 +3,9 @@
 module Skiwo
   module Hubspot
     ##
-    # Hubspot's CRM Company
+    # Hubspot CRM Company
     #
+    # Companies store information about an individual business or organization.
     class Company < Skiwo::Hubspot::CrmObject
       OBJECT_TYPE_ID = "0-2"
 
@@ -13,7 +14,8 @@ module Skiwo
       end
 
       def self.default_properties
-        %w[hs_object_id name domain createdate lastmodifieddate platform_id]
+        super + %w[name domain lifecyclestage hs_lead_status platform_id platform_url
+                   platform_last_activity_date platform_industry platform_business_activity org_id]
       end
 
       def contacts

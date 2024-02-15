@@ -3,8 +3,9 @@
 module Skiwo
   module Hubspot
     ##
-    # Hubspot's CRM Contact
+    # Hubspot CRM Contact
     #
+    # Contacts store information about an individual person.
     class Contact < Skiwo::Hubspot::CrmObject
       OBJECT_TYPE_ID = "0-1"
 
@@ -12,10 +13,9 @@ module Skiwo
         OBJECT_TYPE_ID
       end
 
-      # Properties that will be returned in a response
       def self.default_properties
-        %w[hs_object_id firstname lastname email phone createdate
-           lastmodifieddate platform_id associatedcompanyid]
+        super + %w[firstname lastname email phone lifecyclestage hs_lead_status
+                   associatedcompanyid platform_id platform_url]
       end
 
       ##
@@ -25,7 +25,10 @@ module Skiwo
       #
       # returns true or false
       def add_company(company)
-        association = Skiwo::Hubspot::ContactToCompanyAssociation.new(from_object: self, to_object: company)
+        association = Skiwo::Hubspot::ContactToCompanyAssociation.new(
+          from_object: self,
+          to_object: company
+        )
 
         if association.save
           true

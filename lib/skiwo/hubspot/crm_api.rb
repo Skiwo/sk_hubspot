@@ -13,9 +13,9 @@ module Skiwo
       # Returns an Array with the default properties
       # that will be returned when calling the hubspot api.
       #
-      # Override this method in your own class
+      # Subclasses should override this method
       def default_properties
-        []
+        %w[hs_object_id createdate lastmodifieddate]
       end
 
       ##
