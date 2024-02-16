@@ -29,7 +29,7 @@ module Skiwo
       #
       # returns true or false
       def add_contact(contact)
-        association = Skiwo::Hubspot::CompanyToContactAssociation.new(from_object: self, to_object: contact)
+        association = Skiwo::Hubspot::Association.new(from: self, to: contact)
 
         if association.save
           true

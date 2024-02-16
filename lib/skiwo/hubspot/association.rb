@@ -5,26 +5,39 @@ module Skiwo
     ##
     # Base class to handle associations between hubspot crm objects
     #
-    #  * +:from_object+ - CrmObject
-    #  * +:to_object+ - CrmObject
+    #  * +:from+ - CrmObject
+    #  * +:to+ - CrmObject
     #
     class Association
       ASSOCIATION_CATEGORY = "HUBSPOT_DEFINED"
 
-      attr_accessor :from_object, :to_object, :errors
+      # Associtation Types
+      DEAL_TO_CONTACT     = 3
+      DEAL_TO_COMPANY     = 341
+      CONTACT_TO_COMPANY  = 279
+      COMPANY_TO_CONTACT  = 280
 
-      def initialize(to_object:, from_object: nil)
-        @from_object = from_object
-        @to_object = to_object
+      attr_accessor :from_object, :to_object, :type, :category, :errors
+
+      def initialize(to:, type: nil, from: nil, category: ASSOCIATION_CATEGORY)
+        @from_object = from
+        @to_object = to
+        @type = get_type(type)
+        @category = category
         @errors = []
       end
 
-      def self.association_type_id
-        raise NotImplementedError, "#{name} does not have a association_type_id"
+      def self.association_types
+        @association_types ||= {
+          "deal_to_contact" => DEAL_TO_CONTACT,
+          "deal_to_company" => DEAL_TO_COMPANY,
+          "contact_to_company" => CONTACT_TO_COMPANY,
+          "company_to_contact" => COMPANY_TO_CONTACT
+        }
       end
 
-      def self.association_category
-        ASSOCIATION_CATEGORY
+      def association_types
+        self.class.association_types
       end
 
       def to_h
@@ -92,11 +105,32 @@ module Skiwo
 
       private
 
+      def get_type(type)
+        type_id = if defined?(type) == "constant"
+                    type
+                  elsif type.is_a? String
+                    association_types[type]
+                  else
+                    guess_type
+                  end
+
+        fail ArgumentError, "Association type not found" unless type_id
+
+        type_id
+      end
+
+      # TODO: refactor the call to downcase, this method knows to much
+      def guess_type
+        type_name = "#{from_object&.object_type&.downcase}_to_#{to_object&.object_type&.downcase}"
+        association_types[type_name]
+      end
+
+      # TODO: rename this method
       def types
         [
           {
-            "associationCategory": self.class.association_category,
-            "associationTypeId": self.class.association_type_id
+            "associationCategory": category,
+            "associationTypeId": type
           }
         ]
       end

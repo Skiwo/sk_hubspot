@@ -17,3 +17,6 @@ Layout/LineLength:
 
 Metrics/MethodLength:
   Max: 15
+
+Style/SignalException:
+  EnforcedStyle: only_fail

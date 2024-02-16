@@ -29,8 +29,8 @@ class TestDeal < Minitest::Test
       contact = Skiwo::Hubspot::Contact.find(1) { |err| puts err }
       company = Skiwo::Hubspot::Company.find("19019092085") { |err| puts err }
       associations = []
-      associations << Skiwo::Hubspot::DealToContactAssociation.new(to_object: contact).to_h
-      associations << Skiwo::Hubspot::DealToCompanyAssociation.new(to_object: company).to_h
+      associations << Skiwo::Hubspot::Association.new(to: contact, type: "deal_to_contact").to_h
+      associations << Skiwo::Hubspot::Association.new(to: company, type: "deal_to_company").to_h
 
       deal, _error = Skiwo::Hubspot::Deal.create(associations: associations, properties: basic_attributes)
       assert_equal basic_attributes[:dealname], deal.dealname
