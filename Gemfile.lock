@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sk_hubspot (0.1.0)
+    sk_hubspot (0.1.1)
       activesupport (>= 6.0)
       hubspot-api-client (~> 17.2)
 
