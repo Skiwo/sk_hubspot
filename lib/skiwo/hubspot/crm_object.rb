@@ -16,7 +16,7 @@ module Skiwo
 
       class << self
         def object_type_id
-          raise NotImplementedError, "#{name} does not have a object_type_id"
+          fail NotImplementedError, "#{name} does not have a object_type_id"
         end
 
         def inherited(klass)

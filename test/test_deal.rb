@@ -27,16 +27,10 @@ class TestDeal < Minitest::Test
   def test_that_it_creates_one_deal
     VCR.use_cassette("deals/create_one") do
       contact = Skiwo::Hubspot::Contact.find(1) { |err| puts err }
-      company = Skiwo::Hubspot::Company.find(19_019_092_085) { |err| puts err }
+      company = Skiwo::Hubspot::Company.find("19019092085") { |err| puts err }
       associations = []
-      associations << {
-        "types" => [{ "associationCategory" => "HUBSPOT_DEFINED", "associationTypeId" => 3 }],
-        "to" => { "id" => contact.id.to_s }
-      }
-      associations << {
-        "types" => [{ "associationCategory" => "HUBSPOT_DEFINED", "associationTypeId" => 341 }],
-        "to" => { "id" => company.id.to_s }
-      }
+      associations << Skiwo::Hubspot::Association.new(to: contact, type: "deal_to_contact").to_h
+      associations << Skiwo::Hubspot::Association.new(to: company, type: "deal_to_company").to_h
 
       deal, _error = Skiwo::Hubspot::Deal.create(associations: associations, properties: basic_attributes)
       assert_equal basic_attributes[:dealname], deal.dealname

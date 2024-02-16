@@ -101,7 +101,7 @@ to one or more contacts.
 ```ruby
 company = Skiwo::Hubspot::Company.find(company_id)
 contact = Skiwo::Hubspot::Contact.find(contact_id)
-association = ContactToCompanyAssociation.new(from_object: contact, to_object: company)
+association = Skiwo::Hubspot::Association.new(from: contact, to: company)
 
 if association.save
   ...
@@ -117,16 +117,18 @@ else
 end
 
 ```
-You can pass a hash as specified in the documentation when creating a crm object.
+You can pass a list of associations when creating a Hubspot CRM object.
 
 ```ruby
-associations = [{"types":[{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":0}],"to":{"id":"string"}}]
+associations = []
 properties = { ... }
+company =  Skiwo::Hubspot::Company.find(id)
+deal =  Skiwo::Hubspot::Deal.find(id)
 
-contact = Skiwo::Hubspot::Contact.create(
-properties: properties,
-associations: associations
-) do { |err| fail err }
+associations << Skiwo::Hubspot::Association.new(to: company, type: "contact_to_company")
+associations << Skiwo::Hubspot::Association.new(to: deal, type: "contact_to_deal")
+
+contact = Skiwo::Hubspot::Contact.create(properties: properties, associations: associations) do { |err| fail err }
 ```
 
 
