@@ -14,8 +14,11 @@ module Skiwo
       end
 
       def self.default_properties
-        super + %w[name domain lifecyclestage hs_lead_status platform_id platform_url
-                   platform_last_activity_date platform_industry platform_business_activity org_id]
+        super + %w[
+          name domain lifecyclestage hs_lead_status platform_id platform_url
+          platform_last_activity_date platform_industry platform_business_activity
+          organisation_number
+        ]
       end
 
       def contacts

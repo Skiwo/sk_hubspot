@@ -15,7 +15,8 @@ module Skiwo
       end
 
       def self.default_properties
-        super + %w[dealname amount pipeline closedate dealstage hubspot_owner_id]
+        super + %w[dealname amount pipeline closedate dealstage
+                   hubspot_owner_id platform_id platform_url]
       end
 
       def contacts

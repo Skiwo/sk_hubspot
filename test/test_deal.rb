@@ -5,21 +5,21 @@ require "test_helper"
 class TestDeal < Minitest::Test
   def test_that_it_finds_a_deal_by_id
     VCR.use_cassette("deals/find_one") do
-      deal, _error = Skiwo::Hubspot::Deal.find("17540211861")
-      assert_equal "17540211861", deal.id
+      deal, _error = Skiwo::Hubspot::Deal.find(sample_deal[:hs_object_id])
+      assert_equal sample_deal[:hs_object_id], deal.id
     end
   end
 
   def test_that_it_returns_associated_companies
     VCR.use_cassette("deals/list_companies") do
-      deal, _error = Skiwo::Hubspot::Deal.find("17299561784")
+      deal, _error = Skiwo::Hubspot::Deal.find(sample_deal[:hs_object_id])
       assert_kind_of Skiwo::Hubspot::Company, deal.companies.first
     end
   end
 
   def test_that_it_returns_associated_contacts
     VCR.use_cassette("deals/list_contacts") do
-      deal, _error = Skiwo::Hubspot::Deal.find("17299561784")
+      deal, _error = Skiwo::Hubspot::Deal.find(sample_deal[:hs_object_id])
       assert_kind_of Skiwo::Hubspot::Contact, deal.contacts.first
     end
   end
@@ -49,10 +49,9 @@ class TestDeal < Minitest::Test
     }
   end
 
-  # Sample contact provided by Hubspot
   def sample_deal
     {
-      hs_object_id: 1
+      hs_object_id: "17632643995"
     }
   end
 end
