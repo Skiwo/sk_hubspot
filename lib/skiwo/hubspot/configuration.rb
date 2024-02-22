@@ -10,7 +10,7 @@ module Skiwo
     #   config.default_owner_id = 'some-id'
     # end
     class Configuration
-      attr_accessor :access_token, :default_deal_owner_id
+      attr_accessor :access_token, :default_deal_owner_id, :default_pipeline_id
     end
   end
 end
