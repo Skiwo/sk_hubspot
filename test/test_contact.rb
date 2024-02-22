@@ -81,6 +81,14 @@ class TestContact < Minitest::Test
     end
   end
 
+  def test_that_it_finds_by_email
+    VCR.use_cassette("contacts/find_by_email") do
+      email = sample_contact[:email]
+      contact, _error = Skiwo::Hubspot::Contact.find_by_email(email)
+      assert_equal email, contact.email
+    end
+  end
+
   def test_that_it_returns_associated_companies
     VCR.use_cassette("contacts/list_companies") do
       contact, _error = Skiwo::Hubspot::Contact.find(sample_contact[:hs_object_id])
