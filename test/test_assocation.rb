@@ -35,4 +35,15 @@ class TestAssociation < Minitest::Test
       refute_empty associations
     end
   end
+
+  def test_it_returns_empty_list_of_associations
+    VCR.use_cassette("associations/empty_list_of_associations") do
+      associations, _error = Skiwo::Hubspot::Association.list(
+        from_object_type: "Contact",
+        to_object_type: "Company",
+        id: 51
+      )
+      assert_empty associations
+    end
+  end
 end

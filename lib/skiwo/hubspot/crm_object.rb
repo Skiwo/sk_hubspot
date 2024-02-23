@@ -70,7 +70,7 @@ module Skiwo
           id: id
         ) { |err| errors << err }
 
-        if associations
+        if associations.any?
           ids = associations.first.to.map(&:to_object_id)
 
           result = ids.map do |associated_id|
