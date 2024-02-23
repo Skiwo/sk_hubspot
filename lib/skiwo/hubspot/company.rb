@@ -21,6 +21,11 @@ module Skiwo
         ]
       end
 
+      def self.find_by_organisation_number(organisation_number, &block)
+        results, error = search(organisation_number: organisation_number)
+        respond_with(response: results.first, error: error, &block)
+      end
+
       def contacts
         @contacts ||= load_associated(Contact)
       end

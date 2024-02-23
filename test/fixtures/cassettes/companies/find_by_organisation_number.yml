@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.hubapi.com/crm/v3/objects/Company/search
+    body:
+      encoding: UTF-8
+      string: '{"filterGroups":[{"filters":[{"value":"organisation-number","propertyName":"organisation_number","operator":"EQ"}]}],"properties":["hs_object_id","createdate","lastmodifieddate","name","domain","lifecyclestage","hs_lead_status","platform_id","platform_url","platform_last_activity_date","platform_industry","platform_business_activity","organisation_number"]}'
+    headers:
+      User-Agent:
+      - hubspot-api-client-ruby; 17.2.0
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 22 Feb 2024 10:14:56 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Cf-Ray:
+      - 8596770aedee56bb-OSL
+      Cf-Cache-Status:
+      - DYNAMIC
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Vary:
+      - origin
+      Access-Control-Allow-Credentials:
+      - 'false'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '56'
+      X-Evy-Trace-Listener:
+      - listener_https
+      X-Evy-Trace-Route-Configuration:
+      - listener_https/all
+      X-Evy-Trace-Route-Service-Name:
+      - envoyset-translator
+      X-Evy-Trace-Served-By-Pod:
+      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-c97cj
+      X-Evy-Trace-Virtual-Host:
+      - all
+      X-Hubspot-Correlation-Id:
+      - 604c3e9e-40c1-44d4-abed-e864ec42cd09
+      X-Hubspot-Ratelimit-Daily:
+      - '500000'
+      X-Hubspot-Ratelimit-Daily-Remaining:
+      - '499997'
+      X-Request-Id:
+      - 604c3e9e-40c1-44d4-abed-e864ec42cd09
+      X-Trace:
+      - 2B8F6D8FDCF4A1B3158B6AACD04D7030DC16917F23000000000000000000
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=JIrytIU2ondXeHfFMzxQbxtTvfxRtZIQxcf9E0ZmvYwLmmRyv9gkwME03XnAqmTqrVBa%2FwKtuHAHD2%2BtPo6g6iTp2K%2BILffqgt21gSLyZ68Dqt%2FOZ05CNYDqdo2Z5T76ybdW8YdG9Zdtw5fR"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":1,"results":[{"id":"19019092085","properties":{"createdate":"2024-02-08T09:40:02.478Z","domain":"test.skiwo.com","hs_lastmodifieddate":"2024-02-22T10:14:29.040Z","hs_lead_status":null,"hs_object_id":"19019092085","lifecyclestage":"opportunity","name":"Skiwo
+        Sample Company Updated","organisation_number":"organisation-number","platform_id":"test-platform-id"},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-22T10:14:29.040Z","archived":false}]}'
+  recorded_at: Thu, 22 Feb 2024 10:14:56 GMT
+recorded_with: VCR 6.2.0

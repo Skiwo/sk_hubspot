@@ -18,6 +18,11 @@ module Skiwo
                    associatedcompanyid platform_uid platform_url]
       end
 
+      def self.find_by_email(email, &block)
+        results, error = search(email: email)
+        respond_with(response: results.first, error: error, &block)
+      end
+
       ##
       # Add company to contact
       #
