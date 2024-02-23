@@ -83,8 +83,8 @@ module Skiwo
       # Returns the object if found
       # Without block:
       # Returns a tuple with [result_object, error]
-      def find_by_platform_id(platform_id, &block)
-        results, error = search(platform_id: platform_id)
+      def find_by_platform_uid(platform_uid, &block)
+        results, error = search(platform_uid: platform_uid)
         respond_with(response: results.first, error: error, &block)
       end
 

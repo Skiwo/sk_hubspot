@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.hubapi.com/crm/v3/objects/Company
     body:
       encoding: UTF-8
-      string: '{"properties":{"name":"Skiwo Sample Company","platform_id":"test-platform-id","domain":"test.skiwo.com"}}'
+      string: '{"properties":{"name":"Skiwo Sample Company","platform_uid":"test-platform-id","domain":"test.skiwo.com"}}'
     headers:
       User-Agent:
       - hubspot-api-client-ruby; 17.2.0
@@ -81,6 +81,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"id":"19019092085","properties":{"createdate":"2024-02-08T09:40:02.478Z","domain":"test.skiwo.com","hs_lastmodifieddate":"2024-02-08T09:40:02.478Z","hs_object_id":"19019092085","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"companies-lifecycle-pipeline","lifecyclestage":"lead","name":"Skiwo
-        Sample Company","platform_id":"test-platform-id","website":"test.skiwo.com"},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-08T09:40:02.478Z","archived":false}'
+        Sample Company","platform_uid":"test-platform-id","website":"test.skiwo.com"},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-08T09:40:02.478Z","archived":false}'
   recorded_at: Thu, 08 Feb 2024 09:40:02 GMT
 recorded_with: VCR 6.2.0

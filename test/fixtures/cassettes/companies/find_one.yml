@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.hubapi.com/crm/v3/objects/Company/9406789183?archived=false&properties=hs_object_id,createdate,lastmodifieddate,name,domain,lifecyclestage,hs_lead_status,platform_id,platform_url,platform_last_activity_date,platform_industry,platform_business_activity,organisation_number
+    uri: https://api.hubapi.com/crm/v3/objects/Company/9406789183?archived=false&properties=hs_object_id,createdate,lastmodifieddate,name,domain,lifecyclestage,hs_lead_status,platform_uid,platform_url,platform_last_activity_date,platform_industry,platform_business_activity,organisation_number
     body:
       encoding: US-ASCII
       string: ''
@@ -79,6 +79,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"id":"9406789183","properties":{"createdate":"2022-08-18T12:51:59.195Z","domain":null,"hs_lastmodifieddate":"2024-02-20T12:30:18.776Z","hs_lead_status":null,"hs_object_id":"9406789183","lifecyclestage":"lead","name":"Skiwo
-        AS","platform_id":null},"createdAt":"2022-08-18T12:51:59.195Z","updatedAt":"2024-02-20T12:30:18.776Z","archived":false}'
+        AS","platform_uid":null},"createdAt":"2022-08-18T12:51:59.195Z","updatedAt":"2024-02-20T12:30:18.776Z","archived":false}'
   recorded_at: Tue, 20 Feb 2024 12:32:07 GMT
 recorded_with: VCR 6.2.0

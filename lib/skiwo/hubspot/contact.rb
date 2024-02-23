@@ -15,7 +15,7 @@ module Skiwo
 
       def self.default_properties
         super + %w[firstname lastname email phone lifecyclestage hs_lead_status
-                   associatedcompanyid platform_id platform_url]
+                   associatedcompanyid platform_uid platform_url]
       end
 
       ##

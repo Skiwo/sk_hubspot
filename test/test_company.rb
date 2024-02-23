@@ -41,17 +41,17 @@ class TestCompany < Minitest::Test
     end
   end
 
-  def test_that_it_finds_by_platform_id
-    VCR.use_cassette("companies/find_by_platform_id") do
-      platform_id = basic_attributes.fetch(:platform_id)
-      company, _error = Skiwo::Hubspot::Company.find_by_platform_id(platform_id)
-      assert_equal platform_id, company.properties["platform_id"]
+  def test_that_it_finds_by_platform_uid
+    VCR.use_cassette("companies/find_by_platform_uid") do
+      platform_uid = basic_attributes.fetch(:platform_uid)
+      company, _error = Skiwo::Hubspot::Company.find_by_platform_uid(platform_uid)
+      assert_equal platform_uid, company.properties["platform_uid"]
     end
   end
 
   def test_that_it_returns_associated_contacts
     VCR.use_cassette("companies/list_contacts") do
-      company, _error = Skiwo::Hubspot::Company.find_by_platform_id(basic_attributes[:platform_id])
+      company, _error = Skiwo::Hubspot::Company.find_by_platform_uid(basic_attributes[:platform_uid])
       assert_kind_of Skiwo::Hubspot::Contact, company.contacts.first
     end
   end
@@ -69,7 +69,7 @@ class TestCompany < Minitest::Test
   def basic_attributes
     {
       name: "Skiwo Sample Company",
-      platform_id: "test-platform-id",
+      platform_uid: "test-platform-id",
       domain: "test.skiwo.com"
     }
   end

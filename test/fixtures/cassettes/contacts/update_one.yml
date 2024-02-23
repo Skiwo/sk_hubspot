@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.hubapi.com/crm/v3/objects/Contact/1
     body:
       encoding: UTF-8
-      string: '{"properties":{"firstname":"Maria Updated","platform_id":"this-is-a-test-platform-id"}}'
+      string: '{"properties":{"firstname":"Maria Updated","platform_uid":"this-is-a-test-platform-id"}}'
     headers:
       User-Agent:
       - hubspot-api-client-ruby; 17.2.0
@@ -23,11 +23,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 08 Feb 2024 09:40:02 GMT
+      - Fri, 23 Feb 2024 08:09:04 GMT
       Content-Type:
       - application/json;charset=utf-8
       Cf-Ray:
-      - 8522e8a8bde65695-OSL
+      - 859dfc0839bcb50c-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -39,7 +39,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '129'
+      - '154'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -47,38 +47,38 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-54djw
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-brlf6
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 916834ee-373e-4c92-b634-5580a3297935
+      - 6788bae9-2a63-4832-b52f-fac634e6d50e
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499977'
+      - '499995'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '146'
+      - '149'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 916834ee-373e-4c92-b634-5580a3297935
+      - 6788bae9-2a63-4832-b52f-fac634e6d50e
       X-Trace:
-      - 2B9BECA3B43240C4CA1AE27863E196F9D149787B37000000000000000000
+      - 2BB5C97547C5F1942A244CC80074773D20BEA541C0000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=gYeceQRKDk8WL2BwagsGdorOo%2BqIpezSVoZZhOPIBXMbKouuftqgvKCD0CDeL8%2F32wnpvlNUBbHY9ezG8Qq0o5wTgAY1VUQfE2McPL4L4qc9MxMjx%2FxJF2HnFUplXOQO"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=MuUDJqemDUUAXLdSeQec0Iwe4OOHAeqjHgHjVjGDN7rqRh%2FuY9Jyz%2FJDkVfWYWCm1w6b3z3HUg4Yu9tJ2ZAzw%2FJzUVrS3DF%2BkPOtEbUDLKURTzkOEwEuBGPZtfT3UqwSLOgbYnImRJXdi8ho"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"1","properties":{"createdate":"2021-02-02T20:06:14.733Z","firstname":"Maria
-        Updated","hs_is_contact":"true","hs_is_unworked":"true","hs_object_id":"1","hs_pipeline":"contacts-lifecycle-pipeline","hs_updated_by_user_id":"61794894","lastmodifieddate":"2024-02-08T09:40:02.139Z","lifecyclestage":"lead","notes_last_updated":"2023-05-14T15:26:32.837Z","platform_id":"this-is-a-test-platform-id"},"createdAt":"2021-02-02T20:06:14.733Z","updatedAt":"2024-02-08T09:40:02.139Z","archived":false}'
-  recorded_at: Thu, 08 Feb 2024 09:40:02 GMT
+      string: '{"id":"1","properties":{"createdate":"2021-02-02T20:06:14.733Z","first_deal_created_date":"2024-02-20T12:19:38.688Z","firstname":"Maria
+        Updated","hs_all_accessible_team_ids":"5325968;17016493;17016509","hs_all_owner_ids":"82483371","hs_all_team_ids":"5325968","hs_count_is_unworked":"1","hs_count_is_worked":"0","hs_is_contact":"true","hs_is_unworked":"true","hs_object_id":"1","hs_pipeline":"contacts-lifecycle-pipeline","hs_time_between_contact_creation_and_deal_creation":"96135203955","hs_updated_by_user_id":"61794894","hs_user_ids_of_all_owners":"25019600","hubspot_owner_assigneddate":"2024-02-08T14:15:25.643Z","hubspot_owner_id":"82483371","hubspot_team_id":"5325968","lastmodifieddate":"2024-02-23T08:09:04.204Z","lifecyclestage":"opportunity","notes_last_updated":"2023-05-14T15:26:32.837Z","platform_uid":"this-is-a-test-platform-id"},"createdAt":"2021-02-02T20:06:14.733Z","updatedAt":"2024-02-23T08:09:04.204Z","archived":false}'
+  recorded_at: Fri, 23 Feb 2024 08:09:04 GMT
 recorded_with: VCR 6.2.0

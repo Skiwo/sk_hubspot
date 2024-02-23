@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.hubapi.com/crm/v3/objects/Deal/17632643995?archived=false&properties=hs_object_id,createdate,lastmodifieddate,dealname,amount,pipeline,closedate,dealstage,hubspot_owner_id,platform_id,platform_url
+    uri: https://api.hubapi.com/crm/v3/objects/Deal/17632643995?archived=false&properties=hs_object_id,createdate,lastmodifieddate,dealname,amount,pipeline,closedate,dealstage,hubspot_owner_id,platform_uid,platform_url
     body:
       encoding: US-ASCII
       string: ''
@@ -23,11 +23,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Tue, 20 Feb 2024 12:23:24 GMT
+      - Fri, 23 Feb 2024 08:19:24 GMT
       Content-Type:
       - application/json;charset=utf-8
       Cf-Ray:
-      - 8586b87b1833b51e-OSL
+      - 859e0b2edd620b45-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -39,7 +39,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '14'
+      - '69'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -47,31 +47,31 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-p4brg
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-62gmh
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 5e380c33-5b18-487e-aa38-1c59a152052a
+      - c71dd662-3eb7-4eee-8c00-b932e09ef18d
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499989'
+      - '499983'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '143'
+      - '149'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 5e380c33-5b18-487e-aa38-1c59a152052a
+      - c71dd662-3eb7-4eee-8c00-b932e09ef18d
       X-Trace:
-      - 2B7BD5554A2E004B89E9EA19BA7751AEB3F663400B000000000000000000
+      - 2B984B84D06A5BF7A8CB0F8D350FDC27983E97C95E000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=pm%2BDY7fSnaXKwf9TwDjEw0pCL5k9NTTtsdy49ew2%2FyCRmmJgW2uwS3nKtGvzP2qlOdXFxkQyAbl1%2BbTlQC5vDBtEl%2BfPCS6yWbeJvpX9wIGMlJP534iUOY%2FH%2BGGyRfdW"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=fVxZQiCBXC61yAXiheLrtVY0M8pNpthf6obcIQv6mp5jA6huxRwqQlSkTJwL3fHOZYNHXddMg6TMUaAw7AVkjS1Dd5pOPrUthW4Vf0gj7iVO13cBrkwpU9%2Bdx6W67cMA%2FweQxQogxp9W06cW"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
@@ -79,6 +79,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"id":"17632643995","properties":{"amount":"1000.00","closedate":null,"createdate":"2024-02-20T12:19:38.688Z","dealname":"Test
-        Deal via API","dealstage":"13253661","hs_lastmodifieddate":"2024-02-20T12:20:19.001Z","hs_object_id":"17632643995","hubspot_owner_id":"609225610","pipeline":"3954956"},"createdAt":"2024-02-20T12:19:38.688Z","updatedAt":"2024-02-20T12:20:19.001Z","archived":false}'
-  recorded_at: Tue, 20 Feb 2024 12:23:24 GMT
+        Deal via API","dealstage":"13253661","hs_lastmodifieddate":"2024-02-20T13:20:42.839Z","hs_object_id":"17632643995","hubspot_owner_id":"609225610","pipeline":"3954956","platform_uid":null,"platform_url":null},"createdAt":"2024-02-20T12:19:38.688Z","updatedAt":"2024-02-20T13:20:42.839Z","archived":false}'
+  recorded_at: Fri, 23 Feb 2024 08:19:24 GMT
 recorded_with: VCR 6.2.0

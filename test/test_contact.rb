@@ -36,12 +36,12 @@ class TestContact < Minitest::Test
     VCR.use_cassette("contacts/update_one") do
       object_id = sample_contact.fetch(:hs_object_id)
       first_name = "#{sample_contact[:firstname]} Updated"
-      platform_id = "this-is-a-test-platform-id"
-      attributes = { firstname: first_name, platform_id: platform_id }
+      platform_uid = "this-is-a-test-platform-id"
+      attributes = { firstname: first_name, platform_uid: platform_uid }
 
       contact, _error = Skiwo::Hubspot::Contact.update(object_id, properties: attributes)
       assert_equal attributes[:firstname], contact.firstname
-      assert_equal attributes[:platform_id], contact.platform_id
+      assert_equal attributes[:platform_uid], contact.platform_uid
     end
   end
 
@@ -73,11 +73,11 @@ class TestContact < Minitest::Test
     end
   end
 
-  def test_that_it_finds_by_platform_id
-    VCR.use_cassette("contacts/find_by_platform_id") do
-      platform_id = "57244c78-6900-44bc-8c96-863ec1e2b44f"
-      contact, _error = Skiwo::Hubspot::Contact.find_by_platform_id(platform_id)
-      assert_equal platform_id, contact.platform_id
+  def test_that_it_finds_by_platform_uid
+    VCR.use_cassette("contacts/find_by_platform_uid") do
+      platform_uid = sample_contact[:platform_uid]
+      contact, _error = Skiwo::Hubspot::Contact.find_by_platform_uid(platform_uid)
+      assert_equal platform_uid, contact.platform_uid
     end
   end
 
@@ -113,7 +113,8 @@ class TestContact < Minitest::Test
       hs_object_id: 1,
       firstname: "Maria",
       lastname: "Johnson (Sample Contact)",
-      email: "emailmaria@hubspot.com"
+      email: "emailmaria@hubspot.com",
+      platform_uid: "this-is-a-test-platform-id"
     }
   end
 end

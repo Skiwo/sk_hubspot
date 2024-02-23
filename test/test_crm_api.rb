@@ -19,8 +19,8 @@ class TestCrmApi < Minitest::Test
     assert_respond_to CrmDummy, :search
   end
 
-  def test_it_respond_to_find_by_platform_id
-    assert_respond_to CrmDummy, :find_by_platform_id
+  def test_it_respond_to_find_by_platform_uid
+    assert_respond_to CrmDummy, :find_by_platform_uid
   end
 
   def test_it_respond_to_default_properties
