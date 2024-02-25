@@ -49,11 +49,11 @@ class TestCompany < Minitest::Test
     end
   end
 
-  def test_that_it_finds_by_organisation_number
-    VCR.use_cassette("companies/find_by_organisation_number") do
-      organisation_number = basic_attributes.fetch(:organisation_number)
-      company, _error = Skiwo::Hubspot::Company.find_by_organisation_number(organisation_number)
-      assert_equal organisation_number, company.properties["organisation_number"]
+  def test_that_it_finds_by_org_number
+    VCR.use_cassette("companies/find_by_org_number") do
+      org_number = basic_attributes.fetch(:org_number)
+      company, _error = Skiwo::Hubspot::Company.find_by_org_number(org_number)
+      assert_equal org_number, company.properties["org_number"]
     end
   end
 
@@ -78,8 +78,8 @@ class TestCompany < Minitest::Test
     {
       name: "Skiwo Sample Company",
       platform_uid: "test-platform-id",
-      domain: "test.skiwo.com"
-      organisation_number: "organisation-number"
+      domain: "test.skiwo.com",
+      org_number: "organisation-number"
     }
   end
 

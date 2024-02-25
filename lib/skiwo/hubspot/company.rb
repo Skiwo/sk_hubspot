@@ -17,12 +17,12 @@ module Skiwo
         super + %w[
           name domain lifecyclestage hs_lead_status platform_uid platform_url
           platform_last_activity_date platform_industry platform_business_activity
-          organisation_number
+          org_number
         ]
       end
 
-      def self.find_by_organisation_number(organisation_number, &block)
-        results, error = search(organisation_number: organisation_number)
+      def self.find_by_org_number(org_number, &block)
+        results, error = search(org_number: org_number)
         respond_with(response: results.first, error: error, &block)
       end
 

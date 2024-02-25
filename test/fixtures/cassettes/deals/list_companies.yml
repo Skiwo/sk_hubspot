@@ -163,7 +163,7 @@ http_interactions:
   recorded_at: Fri, 23 Feb 2024 08:19:25 GMT
 - request:
     method: get
-    uri: https://api.hubapi.com/crm/v3/objects/Company/19019092085?archived=false&properties=hs_object_id,createdate,lastmodifieddate,name,domain,lifecyclestage,hs_lead_status,platform_uid,platform_url,platform_last_activity_date,platform_industry,platform_business_activity,organisation_number
+    uri: https://api.hubapi.com/crm/v3/objects/Company/19019092085?archived=false&properties=hs_object_id,createdate,lastmodifieddate,name,domain,lifecyclestage,hs_lead_status,platform_uid,platform_url,platform_last_activity_date,platform_industry,platform_business_activity,org_number
     body:
       encoding: US-ASCII
       string: ''
@@ -240,6 +240,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"id":"19019092085","properties":{"createdate":"2024-02-08T09:40:02.478Z","domain":"test.skiwo.com","hs_lastmodifieddate":"2024-02-23T08:17:21.996Z","hs_lead_status":null,"hs_object_id":"19019092085","lifecyclestage":"opportunity","name":"Skiwo
-        Sample Company Updated","organisation_number":"organisation-number","platform_uid":"test-platform-id","platform_url":null},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-23T08:17:21.996Z","archived":false}'
+        Sample Company Updated","org_number":"organisation-number","platform_uid":"test-platform-id","platform_url":null},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-23T08:17:21.996Z","archived":false}'
   recorded_at: Fri, 23 Feb 2024 08:19:25 GMT
 recorded_with: VCR 6.2.0
