@@ -2,7 +2,8 @@
 
 require "test_helper"
 
-# class DummyCrmObject < Skiwo::Hubspot::CrmObject; end
+class DummyCrmObject < Skiwo::Hubspot::CrmObject; end
+HubspotCrmObject = Struct.new(:id)
 
 class TestCrmObject < Minitest::Test
   def test_it_respond_to_object_type_id
@@ -31,5 +32,11 @@ class TestCrmObject < Minitest::Test
       properties, _error = Skiwo::Hubspot::CrmObject.properties(object_type: "Contact")
       refute_empty properties
     end
+  end
+
+  def test_equality
+    dummy_one = DummyCrmObject.new(HubspotCrmObject.new(1))
+    dummy_two = DummyCrmObject.new(HubspotCrmObject.new(1))
+    assert_equal dummy_one, dummy_two
   end
 end
