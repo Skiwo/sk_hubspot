@@ -45,17 +45,17 @@ The Hubspot CRM supports custom properties that clients can create on the websit
 
 ### Skiwo's Custom Properties
 
-#### Platform ID
+#### Platform UID
 A reference from the Skiwo platform record and to the crm object on
-Hubspot is set via the custom property named `platform_id` on Hubspot.
+Hubspot is set via the custom property named `platform_uid` on Hubspot.
 
 Example:
 
-- Manymore: User.id => Hubspot::Contact.platform_id
-- Salita: Person.id => Hubspot::Contact.platform_id
-- Salita: Order.id => Hubspot::Deal.platform_id
+- Manymore: User.id => Hubspot::Contact.platform_uid
+- Salita: Person.id => Hubspot::Contact.platform_uid
+- Salita: Order.id => Hubspot::Deal.platform_uid
 
-Example: `Skiwo::Hubspot::Contact.find_by_platform_id(id)` to find the record on Hubspot.
+Example: `Skiwo::Hubspot::Contact.find_by_platform_uid(id)` to find the record on Hubspot.
 
 ### Find Objects on Hubspot
 
@@ -86,8 +86,8 @@ puts contact.email
 
 ```ruby
 # Note: you can't create two records of the same type
-# on Hubspot with the same platform id
-contact = Skiwo::Hubspot::Contact.find_by_platform_id(platform_id) { |error| fail error }
+# on Hubspot with the same platform_uid id
+contact = Skiwo::Hubspot::Contact.find_by_platform_uid(platform_uid) { |error| fail error }
 
 unless contact
   attributes = { firstname: "Don", lastname: "Johnson", email: "don@example.com" }
@@ -98,7 +98,7 @@ end
 ### Update an object on Hubspot
 
 ```ruby
-contact = Skiwo::Hubspot::Contact.find_by_platform_id(platform_id) { |error| fail error }
+contact = Skiwo::Hubspot::Contact.find_by_platform_uid(platform_uid) { |error| fail error }
 
 if contact.update(firstname: "Donnie Wayne")
   handle_success
@@ -155,7 +155,7 @@ It is possible to use the property `associatedcompanyid` to associate one compan
 If the company is set on creation it will be labeled as the primary company automatically by Hubspot.
 
 ```ruby
-company = Skiwo::Hubspot::Company.find_by_platform_id(platform_id) { |error| fail error }
+company = Skiwo::Hubspot::Company.find_by_platform_uid(platform_uid) { |error| fail error }
 attributes = {
   firstname: "Don",
   lastname: "Johnson",
