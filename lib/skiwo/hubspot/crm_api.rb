@@ -89,6 +89,27 @@ module Skiwo
       end
 
       ##
+      # Create a new record on hubspot
+      #
+      #  * +:properties+ - Hash with properties
+      #  * +:associations+ - Array of associations options
+      #  * +:block+ - yields any error to the block
+      #
+      # With block:
+      # Returns the new object
+      # Without block:
+      # Returns a tuple with [result_object, error]
+      def create(properties:, associations: {}, &block)
+        body = { properties: properties, associations: associations }
+        error = nil
+        response = basic_api.create(object_type: object_type, body: body) do |err|
+          error = Skiwo::Hubspot::ApiError.with(err)
+        end
+
+        respond_with(response: new(response), error: error, &block)
+      end
+
+      ##
       # Update record on Hubspot
       #
       #   * +:id+ - The object id of the record
@@ -110,24 +131,22 @@ module Skiwo
       end
 
       ##
-      # Create a new record on hubspot
+      # Archive record on Hubspot
       #
-      #  * +:properties+ - Hash with properties
-      #  * +:associations+ - Array of associations options
-      #  * +:block+ - yields any error to the block
+      #   * +:id+ - The object id of the record
+      #   * +:block+ - yields any error to the block
       #
       # With block:
-      # Returns the new object
+      # Returns true
       # Without block:
       # Returns a tuple with [result_object, error]
-      def create(properties:, associations: {}, &block)
-        body = { properties: properties, associations: associations }
+      def delete(id, &block)
         error = nil
-        response = basic_api.create(object_type: object_type, body: body) do |err|
+        basic_api.archive(object_type: object_type, object_id: id) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)
         end
 
-        respond_with(response: new(response), error: error, &block)
+        respond_with(response: error.nil?, error: error, &block)
       end
 
       def properties(object_type: self.object_type, &block)

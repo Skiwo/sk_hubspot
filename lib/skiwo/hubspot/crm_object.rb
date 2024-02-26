@@ -56,6 +56,18 @@ module Skiwo
         end
       end
 
+      def delete
+        _response, error = self.class.delete(id)
+
+        if error
+          errors << error
+          false
+        else
+          @crm_object.archived = true
+          true
+        end
+      end
+
       ##
       # Loads the associated objects
       # Any errors will be added to the instance's errors.

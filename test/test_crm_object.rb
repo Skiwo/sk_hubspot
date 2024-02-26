@@ -27,6 +27,19 @@ class TestCrmObject < Minitest::Test
     assert_respond_to Skiwo::Hubspot::CrmObject.new(nil), :update
   end
 
+  def test_that_it_deletes_object
+    VCR.use_cassette("crm_object/delete") do
+      contact = Skiwo::Hubspot::Contact.create(
+        properties: {
+          firstname: Faker::Name.first_name,
+          lastname: Faker::Name.last_name,
+          email: Faker::Internet.email(domain: "skiwo.com")
+        }
+      ) { |e| fail e }
+      assert contact.delete
+    end
+  end
+
   def test_it_returns_properties_for_object_type
     VCR.use_cassette("crm_object/properties") do
       properties, _error = Skiwo::Hubspot::CrmObject.properties(object_type: "Contact")

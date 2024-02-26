@@ -39,6 +39,10 @@ class TestCrmApi < Minitest::Test
     assert_respond_to CrmDummy, :update
   end
 
+  def test_it_respond_to_delete
+    assert_respond_to CrmDummy, :delete
+  end
+
   def test_it_respond_with_response_using_block
     error = nil
     response = CrmDummy.respond_with(response: "response", error: nil) { |e| error = e }
