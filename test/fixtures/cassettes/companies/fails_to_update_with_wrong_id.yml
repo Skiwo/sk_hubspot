@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.hubapi.com/crm/v3/objects/Company/999999999999
     body:
       encoding: UTF-8
-      string: '{"properties":{"name":"Løken RFH"}}'
+      string: '{"properties":{"name":"Berntsen AS"}}'
     headers:
       User-Agent:
       - hubspot-api-client-ruby; 17.2.0
@@ -14,7 +14,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      - Bearer <HUBSPOT_TOKEN>
       Expect:
       - ''
   response:
@@ -23,13 +23,13 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 08 Feb 2024 09:40:02 GMT
+      - Wed, 28 Feb 2024 07:35:30 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '104'
       Cf-Ray:
-      - 8522e8acabca5695-OSL
+      - 85c6fdbcaa64568d-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -41,7 +41,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '24'
+      - '31'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -49,39 +49,39 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-9ch42
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-xf8s4
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - b8668d77-656d-4789-9b54-387fdd298662
+      - f743048b-079d-4dca-84fc-1891155082aa
       X-Hubspot-Notfound:
       - 'true'
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499975'
+      - '499989'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '144'
+      - '143'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - b8668d77-656d-4789-9b54-387fdd298662
+      - f743048b-079d-4dca-84fc-1891155082aa
       X-Trace:
-      - 2B6999962666F281502B5B540AAF214439449A0EB7000000000000000000
+      - 2BB6036B93CBF0F42CA4881F0997A6F7308A8222B0000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=x0JFHr3zYLbD7DkPE7rWjnoh29gsd17sctkUee8kUwTQsVtPyAYcf27PCdVwmc%2F23nYmAiwKDyPj%2FEETcc0%2FsN7EPMqQE2yo01nhME1Uskgetm%2F1vaLbhli0DBvq8YMd"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=NYWhvsWu%2BtGEKoi7fdO6ncNM5xbF%2Ft%2BZdRtg7rmfqwFCpD3NOY3IhWTdTauw6%2Bamjn2FACw3wd2OUKYL%2FYMAfTLpoKjjR0OeKOLfbIZVRP1X5P%2F73MNBtSZhw74AsMy7"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"status":"error","message":"resource not found","correlationId":"b8668d77-656d-4789-9b54-387fdd298662"}'
-  recorded_at: Thu, 08 Feb 2024 09:40:02 GMT
+      string: '{"status":"error","message":"resource not found","correlationId":"f743048b-079d-4dca-84fc-1891155082aa"}'
+  recorded_at: Wed, 28 Feb 2024 07:35:30 GMT
 recorded_with: VCR 6.2.0

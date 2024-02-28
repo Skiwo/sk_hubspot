@@ -5,8 +5,8 @@ http_interactions:
     uri: https://api.hubapi.com/crm/v3/objects/Contact
     body:
       encoding: UTF-8
-      string: '{"properties":{"firstname":"Helene","lastname":"Gundersen","email":"generic.testuser@skiwo.com","phone":"+47
-        548 41 929"}}'
+      string: '{"properties":{"firstname":"Fredrik","lastname":"Larsen","email":"generic.testuser@skiwo.com","phone":"+47
+        34 78 31 96"}}'
     headers:
       User-Agent:
       - hubspot-api-client-ruby; 17.2.0
@@ -15,7 +15,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      - Bearer <HUBSPOT_TOKEN>
       Expect:
       - ''
   response:
@@ -24,13 +24,13 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 08 Feb 2024 09:40:00 GMT
+      - Wed, 28 Feb 2024 07:41:35 GMT
       Content-Type:
       - application/json;charset=utf-8
       Location:
-      - https://api.hubapi.com/crm/v3/objects/Contact/2726201
+      - https://api.hubapi.com/crm/v3/objects/Contact/2823701
       Cf-Ray:
-      - 8522e89ddd925695-OSL
+      - 85c706a62c82b517-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -42,7 +42,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '322'
+      - '243'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -50,38 +50,38 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-7dt4b
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-nhqt8
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - fb2f6091-a850-412f-a39d-c20dffb16dcf
+      - 4959029c-9d9d-4397-9c51-9b8fcad9ec21
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499982'
+      - '499968'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '149'
+      - '141'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - fb2f6091-a850-412f-a39d-c20dffb16dcf
+      - 4959029c-9d9d-4397-9c51-9b8fcad9ec21
       X-Trace:
-      - 2B7A8CA98AD5F47CFBE0ACF8A6C4945E8AA7E63D99000000000000000000
+      - 2B8AAD7B290D024DDBA1AA7BE1E6F9DF1D2E3F6E75000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ZilLsQ6f7e4h5k6ArjzkrzMuMitxNVA0Qng0%2B3dPQ4rpXgAKZoC8bZpVVYEJ0rRnnRv0Czt44%2Faz87iUn2%2BB32cHWPWTmQ2RPtopvuiEFXOo6EUxNcCbiIYrY67Bcl9Z"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=0N4OByZTTUWMIBerFcB9WFFpPeNx%2BiO8w2UTCebKQH3kK7HgApzU%2BhVadFPFoK6SpX0O8%2BbWS3V%2BjPq9HzN7%2FmGbiw%2FT03KUEveY12LivVGvlg9GxW81vqEQS1HmKXGN"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"2726201","properties":{"createdate":"2024-02-08T09:40:00.517Z","email":"generic.testuser@skiwo.com","firstname":"Helene","hs_all_contact_vids":"2726201","hs_email_domain":"skiwo.com","hs_is_contact":"true","hs_is_unworked":"true","hs_lifecyclestage_lead_date":"2024-02-08T09:40:00.517Z","hs_object_id":"2726201","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"contacts-lifecycle-pipeline","hs_searchable_calculated_phone_number":"4754841929","lastmodifieddate":"2024-02-08T09:40:00.517Z","lastname":"Gundersen","lifecyclestage":"lead","phone":"+47
-        548 41 929"},"createdAt":"2024-02-08T09:40:00.517Z","updatedAt":"2024-02-08T09:40:00.517Z","archived":false}'
-  recorded_at: Thu, 08 Feb 2024 09:40:00 GMT
+      string: '{"id":"2823701","properties":{"createdate":"2024-02-28T07:41:35.178Z","email":"generic.testuser@skiwo.com","firstname":"Fredrik","hs_all_contact_vids":"2823701","hs_email_domain":"skiwo.com","hs_is_contact":"true","hs_is_unworked":"true","hs_lifecyclestage_lead_date":"2024-02-28T07:41:35.178Z","hs_object_id":"2823701","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"contacts-lifecycle-pipeline","hs_searchable_calculated_phone_number":"4734783196","lastmodifieddate":"2024-02-28T07:41:35.178Z","lastname":"Larsen","lifecyclestage":"lead","phone":"+47
+        34 78 31 96"},"createdAt":"2024-02-28T07:41:35.178Z","updatedAt":"2024-02-28T07:41:35.178Z","archived":false}'
+  recorded_at: Wed, 28 Feb 2024 07:41:35 GMT
 recorded_with: VCR 6.2.0

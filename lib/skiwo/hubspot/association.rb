@@ -40,6 +40,7 @@ module Skiwo
         self.class.association_types
       end
 
+      # TODO: it would be better if we had AssociationList
       def to_h
         input = { "types": types, "to": { "id": to_object.id } }
         input["from"] = { "id": from_object.id } if from_object
@@ -50,7 +51,7 @@ module Skiwo
         result, error = self.class.create(
           from_object: from_object,
           to_object: to_object,
-          body: to_h
+          body: [to_h]
         )
 
         if result
@@ -83,6 +84,7 @@ module Skiwo
 
       def self.create(from_object:, to_object:, body:, &block)
         error = nil
+        body = { inputs: body }
         response = batch_api.create(
           from_object_type: from_object.object_type,
           to_object_type: to_object.object_type, body: body

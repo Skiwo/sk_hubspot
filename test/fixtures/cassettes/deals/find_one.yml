@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.hubapi.com/crm/v3/objects/Deal/17632643995?archived=false&properties=hs_object_id,createdate,lastmodifieddate,dealname,amount,pipeline,closedate,dealstage,hubspot_owner_id,platform_uid,platform_url
+    uri: https://api.hubapi.com/crm/v3/objects/Deal/17767522592?archived=false&properties=hs_object_id,createdate,lastmodifieddate,dealname,amount,pipeline,closedate,dealstage,hubspot_owner_id,platform_uid,platform_url
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      - Bearer <HUBSPOT_TOKEN>
       Expect:
       - ''
   response:
@@ -23,11 +23,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Fri, 23 Feb 2024 08:19:24 GMT
+      - Wed, 28 Feb 2024 07:59:07 GMT
       Content-Type:
       - application/json;charset=utf-8
       Cf-Ray:
-      - 859e0b2edd620b45-OSL
+      - 85c720568e2756a9-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -39,7 +39,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '69'
+      - '34'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -47,15 +47,15 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-59d6fb747d-62gmh
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-lld8t
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - c71dd662-3eb7-4eee-8c00-b932e09ef18d
+      - dc35e310-d9cc-4b38-8b29-1adf6c1bd431
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499983'
+      - '499940'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
@@ -67,18 +67,18 @@ http_interactions:
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - c71dd662-3eb7-4eee-8c00-b932e09ef18d
+      - dc35e310-d9cc-4b38-8b29-1adf6c1bd431
       X-Trace:
-      - 2B984B84D06A5BF7A8CB0F8D350FDC27983E97C95E000000000000000000
+      - 2B6F660EB33A57A561CEF2ACE58100EF81915F2B59000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=fVxZQiCBXC61yAXiheLrtVY0M8pNpthf6obcIQv6mp5jA6huxRwqQlSkTJwL3fHOZYNHXddMg6TMUaAw7AVkjS1Dd5pOPrUthW4Vf0gj7iVO13cBrkwpU9%2Bdx6W67cMA%2FweQxQogxp9W06cW"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=CUcp4%2BwoLv2IumaRyft56wpRPQGo2t80Ufv3Ir8FyG9wwW0pUpPGTw80ICRSq6cPKZ%2BKC985oGbpiMbaDvOJqwT37t2VfUnhzXzu69ZETg4lRn%2BUuRwPEaXB1nbv%2FtR3"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"17632643995","properties":{"amount":"1000.00","closedate":null,"createdate":"2024-02-20T12:19:38.688Z","dealname":"Test
-        Deal via API","dealstage":"13253661","hs_lastmodifieddate":"2024-02-20T13:20:42.839Z","hs_object_id":"17632643995","hubspot_owner_id":"609225610","pipeline":"3954956","platform_uid":null,"platform_url":null},"createdAt":"2024-02-20T12:19:38.688Z","updatedAt":"2024-02-20T13:20:42.839Z","archived":false}'
-  recorded_at: Fri, 23 Feb 2024 08:19:24 GMT
+      string: '{"id":"17767522592","properties":{"amount":"1000.00","closedate":null,"createdate":"2024-02-28T07:57:26.209Z","dealname":"Test
+        Deal via API","dealstage":"13253661","hs_lastmodifieddate":"2024-02-28T07:57:29.713Z","hs_object_id":"17767522592","hubspot_owner_id":"609225610","pipeline":"3954956","platform_uid":null,"platform_url":null},"createdAt":"2024-02-28T07:57:26.209Z","updatedAt":"2024-02-28T07:57:29.713Z","archived":false}'
+  recorded_at: Wed, 28 Feb 2024 07:59:07 GMT
 recorded_with: VCR 6.2.0

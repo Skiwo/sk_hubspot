@@ -14,7 +14,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      - Bearer <HUBSPOT_TOKEN>
       Expect:
       - ''
   response:
@@ -23,11 +23,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Fri, 23 Feb 2024 08:09:04 GMT
+      - Wed, 28 Feb 2024 07:41:32 GMT
       Content-Type:
       - application/json;charset=utf-8
       Cf-Ray:
-      - 859dfc0839bcb50c-OSL
+      - 85c70695aad3b517-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -39,7 +39,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '154'
+      - '71'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -47,38 +47,38 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-59d6fb747d-brlf6
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-62gmh
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 6788bae9-2a63-4832-b52f-fac634e6d50e
+      - 234fdc7e-1e36-4484-af34-6da630cac11d
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499995'
+      - '499974'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '149'
+      - '146'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 6788bae9-2a63-4832-b52f-fac634e6d50e
+      - 234fdc7e-1e36-4484-af34-6da630cac11d
       X-Trace:
-      - 2BB5C97547C5F1942A244CC80074773D20BEA541C0000000000000000000
+      - 2B159513DCEDDF5649BD81DBFADEDE8F6CE357B9ED000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=MuUDJqemDUUAXLdSeQec0Iwe4OOHAeqjHgHjVjGDN7rqRh%2FuY9Jyz%2FJDkVfWYWCm1w6b3z3HUg4Yu9tJ2ZAzw%2FJzUVrS3DF%2BkPOtEbUDLKURTzkOEwEuBGPZtfT3UqwSLOgbYnImRJXdi8ho"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=s%2FfuizS5x5ZMvYVMHLbjvImD%2F77BHuO4h6HmNNz48HweVzDapXaqCtHIcG7euv6MnaQDb9nkcrBEWYNxMel2z8uC4gehg%2Bho9SN7cxqRqTmVpF84psapkqQU54FTn0DX"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"1","properties":{"createdate":"2021-02-02T20:06:14.733Z","first_deal_created_date":"2024-02-20T12:19:38.688Z","firstname":"Maria
-        Updated","hs_all_accessible_team_ids":"5325968;17016493;17016509","hs_all_owner_ids":"82483371","hs_all_team_ids":"5325968","hs_count_is_unworked":"1","hs_count_is_worked":"0","hs_is_contact":"true","hs_is_unworked":"true","hs_object_id":"1","hs_pipeline":"contacts-lifecycle-pipeline","hs_time_between_contact_creation_and_deal_creation":"96135203955","hs_updated_by_user_id":"61794894","hs_user_ids_of_all_owners":"25019600","hubspot_owner_assigneddate":"2024-02-08T14:15:25.643Z","hubspot_owner_id":"82483371","hubspot_team_id":"5325968","lastmodifieddate":"2024-02-23T08:09:04.204Z","lifecyclestage":"opportunity","notes_last_updated":"2023-05-14T15:26:32.837Z","platform_uid":"this-is-a-test-platform-id"},"createdAt":"2021-02-02T20:06:14.733Z","updatedAt":"2024-02-23T08:09:04.204Z","archived":false}'
-  recorded_at: Fri, 23 Feb 2024 08:09:04 GMT
+      string: '{"id":"1","properties":{"createdate":"2021-02-02T20:06:14.733Z","first_deal_created_date":"","firstname":"Maria
+        Updated","hs_all_accessible_team_ids":"5325968;17016493;17016509","hs_all_owner_ids":"82483371","hs_all_team_ids":"5325968","hs_count_is_unworked":"1","hs_count_is_worked":"0","hs_is_unworked":"true","hs_object_id":"1","hs_pipeline":"contacts-lifecycle-pipeline","hs_time_between_contact_creation_and_deal_creation":"","hs_updated_by_user_id":"61794894","hs_user_ids_of_all_owners":"25019600","hubspot_owner_assigneddate":"2024-02-08T14:15:25.643Z","hubspot_owner_id":"82483371","hubspot_team_id":"5325968","lastmodifieddate":"2024-02-28T07:29:54.355Z","lifecyclestage":"opportunity","notes_last_updated":"2023-05-14T15:26:32.837Z","platform_uid":"this-is-a-test-platform-id"},"createdAt":"2021-02-02T20:06:14.733Z","updatedAt":"2024-02-28T07:29:54.355Z","archived":false}'
+  recorded_at: Wed, 28 Feb 2024 07:41:32 GMT
 recorded_with: VCR 6.2.0

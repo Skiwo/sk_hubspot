@@ -23,6 +23,9 @@ end
 VCR.configure do |config|
   config.cassette_library_dir = "test/fixtures/cassettes"
   config.hook_into :webmock
+  config.filter_sensitive_data("<HUBSPOT_TOKEN>") do
+    ENV["HUBSPOT_TOKEN"] || Skiwo::Hubspot.configuration.access_token
+  end
 end
 
 Faker::Config.locale = "nb-NO"

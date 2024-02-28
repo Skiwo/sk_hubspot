@@ -27,7 +27,7 @@ class TestDeal < Minitest::Test
   def test_that_it_creates_one_deal
     VCR.use_cassette("deals/create_one") do
       contact = Skiwo::Hubspot::Contact.find(1) { |err| puts err }
-      company = Skiwo::Hubspot::Company.find("19019092085") { |err| puts err }
+      company = Skiwo::Hubspot::Company.find("19266541416") { |err| puts err }
       associations = []
       associations << Skiwo::Hubspot::Association.new(to: contact, type: "deal_to_contact").to_h
       associations << Skiwo::Hubspot::Association.new(to: company, type: "deal_to_company").to_h
@@ -51,7 +51,7 @@ class TestDeal < Minitest::Test
 
   def sample_deal
     {
-      hs_object_id: "17632643995"
+      hs_object_id: "17767522592"
     }
   end
 end

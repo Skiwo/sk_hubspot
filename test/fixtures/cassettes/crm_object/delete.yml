@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.hubapi.com/crm/v3/objects/Contact
     body:
       encoding: UTF-8
-      string: '{"properties":{"firstname":"Marie","lastname":"Østli","email":"horace@skiwo.com"}}'
+      string: '{"properties":{"firstname":"Kristine","lastname":"Stensrud","email":"hallie@skiwo.com"}}'
     headers:
       User-Agent:
       - hubspot-api-client-ruby; 17.2.0
@@ -14,7 +14,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      - Bearer <HUBSPOT_TOKEN>
       Expect:
       - ''
   response:
@@ -23,13 +23,13 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 26 Feb 2024 09:26:45 GMT
+      - Wed, 28 Feb 2024 07:55:38 GMT
       Content-Type:
       - application/json;charset=utf-8
       Location:
-      - https://api.hubapi.com/crm/v3/objects/Contact/2801201
+      - https://api.hubapi.com/crm/v3/objects/Contact/2823801
       Cf-Ray:
-      - 85b725f1eff056bf-OSL
+      - 85c71b3c8c157129-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -41,7 +41,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '241'
+      - '247'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -49,15 +49,15 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-59d6fb747d-99cql
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-b27mr
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 4c10cc3a-6225-49d3-9f74-e81c932f9919
+      - 6a99db49-2fac-4855-9f2f-ab2b238a9928
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499996'
+      - '499955'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
@@ -69,23 +69,22 @@ http_interactions:
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 4c10cc3a-6225-49d3-9f74-e81c932f9919
+      - 6a99db49-2fac-4855-9f2f-ab2b238a9928
       X-Trace:
-      - 2B0953BED982A20BDA954E000D47E38AFC95B387E4000000000000000000
+      - 2B432733053385E7161C26207B7911ED80D6DAEDF9000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Q%2FZ4wA7qwT0BnlRQAbzGLlz4pzZ%2BJEZcciHbkBgWlP20kNpmjck%2Bf%2FO7%2B5F9Qgwut%2FQmeil61k8q1aKbnmqob5YIbydFdBA1O%2Bq5379ZceiYgrOs19uZHV5A9aiehELl"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=BJov2du9mNK%2FFJdCIcEtRRfIKKj%2FIL%2BLlY2WsljEyD0VQ3j8OVNuXtLR1%2BeIYv5wfDtRpN1KhVbsJVaAljFpKH6moYuPH%2BalpXD9e%2Bs3E%2B3YlN0xo9tPpsY2XwrL4g8R"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpZCI6IjI4MDEyMDEiLCJwcm9wZXJ0aWVzIjp7ImNyZWF0ZWRhdGUiOiIyMDI0LTAyLTI2VDA5OjI2OjQ0LjkzNFoiLCJlbWFpbCI6ImhvcmFjZUBza2l3by5jb20iLCJmaXJzdG5hbWUiOiJNYXJpZSIsImhzX2FsbF9jb250YWN0X3ZpZHMiOiIyODAxMjAxIiwiaHNfZW1haWxfZG9tYWluIjoic2tpd28uY29tIiwiaHNfaXNfY29udGFjdCI6InRydWUiLCJoc19pc191bndvcmtlZCI6InRydWUiLCJoc19saWZlY3ljbGVzdGFnZV9sZWFkX2RhdGUiOiIyMDI0LTAyLTI2VDA5OjI2OjQ0LjkzNFoiLCJoc19vYmplY3RfaWQiOiIyODAxMjAxIiwiaHNfb2JqZWN0X3NvdXJjZSI6IklOVEVHUkFUSU9OIiwiaHNfb2JqZWN0X3NvdXJjZV9pZCI6IjI0NDg3NjkiLCJoc19vYmplY3Rfc291cmNlX2xhYmVsIjoiSU5URUdSQVRJT04iLCJoc19waXBlbGluZSI6ImNvbnRhY3RzLWxpZmVjeWNsZS1waXBlbGluZSIsImxhc3Rtb2RpZmllZGRhdGUiOiIyMDI0LTAyLTI2VDA5OjI2OjQ0LjkzNFoiLCJsYXN0bmFtZSI6IsOYc3RsaSIsImxpZmVjeWNsZXN0YWdlIjoibGVhZCJ9LCJjcmVhdGVkQXQiOiIyMDI0LTAyLTI2VDA5OjI2OjQ0LjkzNFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTAyLTI2VDA5OjI2OjQ0LjkzNFoiLCJhcmNoaXZlZCI6ZmFsc2V9
-  recorded_at: Mon, 26 Feb 2024 09:26:45 GMT
+      string: '{"id":"2823801","properties":{"createdate":"2024-02-28T07:55:38.480Z","email":"hallie@skiwo.com","firstname":"Kristine","hs_all_contact_vids":"2823801","hs_email_domain":"skiwo.com","hs_is_contact":"true","hs_is_unworked":"true","hs_lifecyclestage_lead_date":"2024-02-28T07:55:38.480Z","hs_object_id":"2823801","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"contacts-lifecycle-pipeline","lastmodifieddate":"2024-02-28T07:55:38.480Z","lastname":"Stensrud","lifecyclestage":"lead"},"createdAt":"2024-02-28T07:55:38.480Z","updatedAt":"2024-02-28T07:55:38.480Z","archived":false}'
+  recorded_at: Wed, 28 Feb 2024 07:55:38 GMT
 - request:
     method: delete
-    uri: https://api.hubapi.com/crm/v3/objects/Contact/2801201
+    uri: https://api.hubapi.com/crm/v3/objects/Contact/2823801
     body:
       encoding: US-ASCII
       string: ''
@@ -97,7 +96,7 @@ http_interactions:
       Accept:
       - "*/*"
       Authorization:
-      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      - Bearer <HUBSPOT_TOKEN>
       Expect:
       - ''
   response:
@@ -106,9 +105,9 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 26 Feb 2024 09:26:45 GMT
+      - Wed, 28 Feb 2024 07:55:39 GMT
       Cf-Ray:
-      - 85b725f4ec0756bf-OSL
+      - 85c71b3fcf607129-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -120,7 +119,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '168'
+      - '108'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -128,15 +127,15 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-59d6fb747d-jkvgc
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-8fqsk
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 2b6b02ff-83d6-4e80-8fd3-e0883c8e7f47
+      - 4f707bbe-489b-473b-9bc5-908f7d4536e7
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499995'
+      - '499954'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
@@ -148,11 +147,11 @@ http_interactions:
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 2b6b02ff-83d6-4e80-8fd3-e0883c8e7f47
+      - 4f707bbe-489b-473b-9bc5-908f7d4536e7
       X-Trace:
-      - 2B8D7A3423ABFF8DC0B3A2E7B18FFB26CCF2553DC1000000000000000000
+      - 2B0467E6DDAC9936999FF2AC3811DAFA77075EA0D9000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=TVpuvWfoIYu5p3vkViDHIfblAkJuLF0kZelhwta06i8gXpKMvu%2B%2FyiYy8djiZ5AQTgMhg1mBmXN3lLg7%2Br2WxLfGxHHpZceSOl7HfsIMRC95tUDQpCxYpI9helWdGFZt"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=kArtqbh5gd23P1w8qB6FQOmdLlQoF2U%2FiJwy1hQiVnUUFEHYMcXAk3jictJRZj2kbiQZ%2BzTRJgBhqr%2BZuZN8%2FE3hybPyAfrzUKPfQj5wT4ye36eY7DW7C9jgSPhS8%2Bfx"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
@@ -160,5 +159,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-  recorded_at: Mon, 26 Feb 2024 09:26:45 GMT
+  recorded_at: Wed, 28 Feb 2024 07:55:39 GMT
 recorded_with: VCR 6.2.0

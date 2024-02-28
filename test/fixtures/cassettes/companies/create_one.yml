@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.hubapi.com/crm/v3/objects/Company
     body:
       encoding: UTF-8
-      string: '{"properties":{"name":"Skiwo Sample Company","platform_uid":"test-platform-id","domain":"test.skiwo.com"}}'
+      string: '{"properties":{"name":"Skiwo Sample Company","platform_uid":"test-platform-id","domain":"test.skiwo.com","org_number":"organisation-number"}}'
     headers:
       User-Agent:
       - hubspot-api-client-ruby; 17.2.0
@@ -14,7 +14,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      - Bearer <HUBSPOT_TOKEN>
       Expect:
       - ''
   response:
@@ -23,13 +23,13 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 08 Feb 2024 09:40:02 GMT
+      - Wed, 28 Feb 2024 07:30:28 GMT
       Content-Type:
       - application/json;charset=utf-8
       Location:
-      - https://api.hubapi.com/crm/v3/objects/Company/19019092085
+      - https://api.hubapi.com/crm/v3/objects/Company/19266541416
       Cf-Ray:
-      - 8522e8aad9205695-OSL
+      - 85c6f65cc8685684-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -41,7 +41,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '161'
+      - '196'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -49,38 +49,38 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-c7v6d
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-kc6c4
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 0a2cd123-5148-4f5c-97ed-35c947975147
+      - 8f3d73c1-d97b-45a5-8944-a3f79d2ce9c4
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499976'
+      - '499998'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '145'
+      - '149'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 0a2cd123-5148-4f5c-97ed-35c947975147
+      - 8f3d73c1-d97b-45a5-8944-a3f79d2ce9c4
       X-Trace:
-      - 2B0C3478D00E70CE67FB60C2283066FEE56650631E000000000000000000
+      - 2B02CF85D6EE3B40311213E4C9800B9FDA8CD7BF42000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=ugIQQeYGuj%2FzsY35nN8MncS3YVFS2SND0svbDFcTedJ1JeVJFM4z77CNt4gGCL3r73FdgByyGgWYiW%2FsJ%2F6QY9KvR%2FlZY%2B07KYX7jykht7okgLmF%2FgeqJviAjuZbZjWB"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=a9Yeijr57VPFQntDzGbDomRH0S%2FaqPUEilG6Vbw8Qwxlbewma8pPqXnz0Pu6pWIbozcKAWiNFYG6cF24C5%2Bfcy6gX4IMSYPJmQqfp3MctCi6Pyo3pLDXPqOLX0F5x02I"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"19019092085","properties":{"createdate":"2024-02-08T09:40:02.478Z","domain":"test.skiwo.com","hs_lastmodifieddate":"2024-02-08T09:40:02.478Z","hs_object_id":"19019092085","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"companies-lifecycle-pipeline","lifecyclestage":"lead","name":"Skiwo
-        Sample Company","platform_uid":"test-platform-id","website":"test.skiwo.com"},"createdAt":"2024-02-08T09:40:02.478Z","updatedAt":"2024-02-08T09:40:02.478Z","archived":false}'
-  recorded_at: Thu, 08 Feb 2024 09:40:02 GMT
+      string: '{"id":"19266541416","properties":{"createdate":"2024-02-28T07:30:28.112Z","domain":"test.skiwo.com","hs_lastmodifieddate":"2024-02-28T07:30:28.112Z","hs_object_id":"19266541416","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_pipeline":"companies-lifecycle-pipeline","lifecyclestage":"lead","name":"Skiwo
+        Sample Company","org_number":"organisation-number","platform_uid":"test-platform-id","website":"test.skiwo.com"},"createdAt":"2024-02-28T07:30:28.112Z","updatedAt":"2024-02-28T07:30:28.112Z","archived":false}'
+  recorded_at: Wed, 28 Feb 2024 07:30:28 GMT
 recorded_with: VCR 6.2.0

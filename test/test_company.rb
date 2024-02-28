@@ -66,7 +66,7 @@ class TestCompany < Minitest::Test
 
   def test_that_it_adds_a_contact
     VCR.use_cassette("companies/add_contact") do
-      company, _error = Skiwo::Hubspot::Company.find("19019092085")
+      company, _error = Skiwo::Hubspot::Company.find("19266541416")
       contact, _error = Skiwo::Hubspot::Contact.find("1")
       assert company.add_contact(contact)
     end
@@ -86,7 +86,7 @@ class TestCompany < Minitest::Test
   # Sample company
   def sample_company
     {
-      hs_object_id: "19019092085",
+      hs_object_id: "19266541416",
       name: basic_attributes[:name]
     }
   end

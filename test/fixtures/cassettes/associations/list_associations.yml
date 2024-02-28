@@ -14,7 +14,7 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - Bearer pat-na1-37abbdbc-3957-44e6-b6eb-ec1ae1099e66
+      - Bearer <HUBSPOT_TOKEN>
       Expect:
       - ''
   response:
@@ -23,11 +23,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 15 Feb 2024 05:28:19 GMT
+      - Wed, 28 Feb 2024 09:41:02 GMT
       Content-Type:
       - application/json;charset=utf-8
       Cf-Ray:
-      - 855b258f8e9ab505-OSL
+      - 85c7b5a02f74b529-OSL
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -39,7 +39,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '33'
+      - '29'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -47,37 +47,37 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-f7f4ffb8f-pxpfs
+      - iad02/hubapi-td/envoy-proxy-59d6fb747d-kqdrb
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 3c2d39cf-e2db-490d-b6b2-9e8d5c2a52b3
+      - 40951fb5-b930-4064-a691-64dc83caaaa8
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499973'
+      - '499897'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '142'
+      - '149'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 3c2d39cf-e2db-490d-b6b2-9e8d5c2a52b3
+      - 40951fb5-b930-4064-a691-64dc83caaaa8
       X-Trace:
-      - 2BD850D390D7A59F4D79597BE54964DD4CF182D72C000000000000000000
+      - 2BC2F35D9888470FE6FC2B3C023ACE2F0EC3CCEF64000000000000000000
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=1dQrQULpwm9a6FEZcxwdzQXJFebGPHjsFe7OTy%2FqriNprC73911%2F3JHCXisL2GTMMtfvoNU01dh2kOW%2FSZOOYpS5ArhRen9xdWe%2BV5hE1YOK75ITLEBOvuwZbYkWjAj9mTd18y1tP8jPEdSx"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=AaH6HastBxUJkIk8%2FTrXDJ02QgTJxh9SHYJzCftlTl0AaTlDpcgAHKeK1qLdmC4fS9jXJTAawxJZsWMjKofG%2BpE3QiEPSRl3g3Q6YreODCvJ%2FXRfOY38HvyokDmy5eIY"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"status":"COMPLETE","results":[{"from":{"id":"1"},"to":[{"toObjectId":9406789183,"associationTypes":[{"category":"HUBSPOT_DEFINED","typeId":279,"label":null},{"category":"HUBSPOT_DEFINED","typeId":1,"label":"Primary"}]},{"toObjectId":19019092085,"associationTypes":[{"category":"HUBSPOT_DEFINED","typeId":279,"label":null}]}]}],"startedAt":"2024-02-15T05:28:19.217Z","completedAt":"2024-02-15T05:28:19.230Z"}'
-  recorded_at: Thu, 15 Feb 2024 05:28:19 GMT
+      string: '{"status":"COMPLETE","results":[{"from":{"id":"1"},"to":[{"toObjectId":19266541416,"associationTypes":[{"category":"HUBSPOT_DEFINED","typeId":279,"label":null},{"category":"HUBSPOT_DEFINED","typeId":1,"label":"Primary"}]}]}],"startedAt":"2024-02-28T09:41:02.218Z","completedAt":"2024-02-28T09:41:02.231Z"}'
+  recorded_at: Wed, 28 Feb 2024 09:41:02 GMT
 recorded_with: VCR 6.2.0
