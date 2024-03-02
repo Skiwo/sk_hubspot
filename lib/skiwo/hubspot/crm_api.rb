@@ -36,11 +36,11 @@ module Skiwo
       def find(id, options: {}, &block)
         options = { properties: default_properties, archived: false }.merge(options)
         error = nil
-        response = basic_api.get_by_id(object_type: object_type, object_id: id, **options) do |err|
+        response = basic_api.get_by_id(object_type:, object_id: id, **options) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)
         end
 
-        respond_with(response: new(response), error: error, &block)
+        respond_with(response: new(response), error:, &block)
       end
 
       ##
@@ -64,16 +64,16 @@ module Skiwo
       # Without block:
       # Returns a tuple with [result_objects, error]
       def search(properties: default_properties, **options, &block)
-        filters = options.map { |key, value| { propertyName: key.to_s, value: value, operator: "EQ" } }
-        body = { properties: properties, filterGroups: [{ filters: filters }] }
+        filters = options.map { |key, value| { propertyName: key.to_s, value:, operator: "EQ" } }
+        body = { properties:, filterGroups: [{ filters: }] }
 
         error = nil
-        response = search_api.do_search(object_type: object_type, body: body) do |err|
+        response = search_api.do_search(object_type:, body:) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)
         end
 
         results = response.results.map { |record| new(record) }
-        respond_with(response: results, error: error, &block)
+        respond_with(response: results, error:, &block)
       end
 
       ##
@@ -84,8 +84,8 @@ module Skiwo
       # Without block:
       # Returns a tuple with [result_object, error]
       def find_by_platform_uid(platform_uid, &block)
-        results, error = search(platform_uid: platform_uid)
-        respond_with(response: results.first, error: error, &block)
+        results, error = search(platform_uid:)
+        respond_with(response: results.first, error:, &block)
       end
 
       ##
@@ -100,13 +100,13 @@ module Skiwo
       # Without block:
       # Returns a tuple with [result_object, error]
       def create(properties:, associations: {}, &block)
-        body = { properties: properties, associations: associations }
+        body = { properties:, associations: }
         error = nil
-        response = basic_api.create(object_type: object_type, body: body) do |err|
+        response = basic_api.create(object_type:, body:) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)
         end
 
-        respond_with(response: new(response), error: error, &block)
+        respond_with(response: new(response), error:, &block)
       end
 
       ##
@@ -121,13 +121,13 @@ module Skiwo
       # Without block:
       # Returns a tuple with [result_object, error]
       def update(id, properties: {}, &block)
-        body = { properties: properties }
+        body = { properties: }
         error = nil
-        response = basic_api.update(object_type: object_type, object_id: id, body: body) do |err|
+        response = basic_api.update(object_type:, object_id: id, body:) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)
         end
 
-        respond_with(response: new(response), error: error, &block)
+        respond_with(response: new(response), error:, &block)
       end
 
       ##
@@ -142,16 +142,16 @@ module Skiwo
       # Returns a tuple with [result_object, error]
       def delete(id, &block)
         error = nil
-        basic_api.archive(object_type: object_type, object_id: id) do |err|
+        basic_api.archive(object_type:, object_id: id) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)
         end
 
-        respond_with(response: error.nil?, error: error, &block)
+        respond_with(response: error.nil?, error:, &block)
       end
 
       def properties(object_type: self.object_type, &block)
-        properties, error = Skiwo::Hubspot.properties(object_type: object_type)
-        respond_with(response: properties, error: error, &block)
+        properties, error = Skiwo::Hubspot.properties(object_type:)
+        respond_with(response: properties, error:, &block)
       end
 
       def respond_with(response:, error:, &block)

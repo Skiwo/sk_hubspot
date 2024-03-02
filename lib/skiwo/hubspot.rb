@@ -50,7 +50,7 @@ module Skiwo
     # Internal use only?
     def self.properties(object_type:)
       error = nil
-      properties = crm.properties.core_api.get_all(object_type: object_type) do |err|
+      properties = crm.properties.core_api.get_all(object_type:) do |err|
         error = Skiwo::Hubspot::ApiError.with(err)
       end
 

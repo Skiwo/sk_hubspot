@@ -22,8 +22,8 @@ module Skiwo
       end
 
       def self.find_by_org_number(org_number, &block)
-        results, error = search(org_number: org_number)
-        respond_with(response: results.first, error: error, &block)
+        results, error = search(org_number:)
+        respond_with(response: results.first, error:, &block)
       end
 
       def contacts

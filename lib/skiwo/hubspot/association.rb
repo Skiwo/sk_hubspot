@@ -49,8 +49,8 @@ module Skiwo
 
       def save
         result, error = self.class.create(
-          from_object: from_object,
-          to_object: to_object,
+          from_object:,
+          to_object:,
           body: [to_h]
         )
 
@@ -63,12 +63,12 @@ module Skiwo
       end
 
       def self.list(from_object_type:, to_object_type:, id:, &block)
-        body = { inputs: [{ id: id }] }
+        body = { inputs: [{ id: }] }
         error = nil
         response = batch_api.get_page(
-          from_object_type: from_object_type,
-          to_object_type: to_object_type,
-          body: body
+          from_object_type:,
+          to_object_type:,
+          body:
         ) { |err| error = Skiwo::Hubspot::ApiError.with(err) }
 
         # TODO: move this to a shared module
@@ -87,7 +87,7 @@ module Skiwo
         body = { inputs: body }
         response = batch_api.create(
           from_object_type: from_object.object_type,
-          to_object_type: to_object.object_type, body: body
+          to_object_type: to_object.object_type, body:
         ) do |err|
           error = Skiwo::Hubspot::ApiError.with(err)
         end

@@ -32,7 +32,7 @@ class TestDeal < Minitest::Test
       associations << Skiwo::Hubspot::Association.new(to: contact, type: "deal_to_contact").to_h
       associations << Skiwo::Hubspot::Association.new(to: company, type: "deal_to_company").to_h
 
-      deal, _error = Skiwo::Hubspot::Deal.create(associations: associations, properties: basic_attributes)
+      deal, _error = Skiwo::Hubspot::Deal.create(associations:, properties: basic_attributes)
       assert_equal basic_attributes[:dealname], deal.dealname
     end
   end

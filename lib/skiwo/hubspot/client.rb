@@ -31,7 +31,7 @@ module Skiwo
       attr_reader :hubspot_client
 
       def set_hubspot_client
-        @hubspot_client = ::Hubspot::Client.new(access_token: access_token)
+        @hubspot_client = ::Hubspot::Client.new(access_token:)
       end
     end
   end

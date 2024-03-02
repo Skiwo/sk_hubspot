@@ -18,7 +18,7 @@ module Skiwo
         rescue JSON::ParserError
           message = { status: "error", message: error.message }
         end
-        new(code: error.code, message: message)
+        new(code: error.code, message:)
       end
     end
   end

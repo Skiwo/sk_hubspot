@@ -19,8 +19,8 @@ module Skiwo
       end
 
       def self.find_by_email(email, &block)
-        results, error = search(email: email)
-        respond_with(response: results.first, error: error, &block)
+        results, error = search(email:)
+        respond_with(response: results.first, error:, &block)
       end
 
       ##

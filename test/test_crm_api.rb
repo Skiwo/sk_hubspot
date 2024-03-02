@@ -59,14 +59,14 @@ class TestCrmApi < Minitest::Test
   def test_it_yields_error_and_return_nil
     returned_error = nil
     error = Skiwo::Hubspot::ApiError.new(code: "error", message: "FAILED")
-    response = CrmDummy.respond_with(response: "response", error: error) { |e| returned_error = e }
+    response = CrmDummy.respond_with(response: "response", error:) { |e| returned_error = e }
     assert_equal error, returned_error
     assert_nil response
   end
 
   def test_it_respond_with_nil_and_error
     error = Skiwo::Hubspot::ApiError.new(code: "error", message: "FAILED")
-    response, returned_error = CrmDummy.respond_with(response: "response", error: error)
+    response, returned_error = CrmDummy.respond_with(response: "response", error:)
     assert_equal error, returned_error
     assert_nil response
   end

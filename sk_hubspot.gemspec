@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "This gem is just a thin wrapper around the hubspot-api-client"
   spec.homepage = "https://github.com/Skiwo/sk_hubspot"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.7.0"
+  spec.required_ruby_version = ">= 3.1.4"
 
   spec.metadata["homepage_uri"] = spec.homepage
 

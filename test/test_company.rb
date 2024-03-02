@@ -23,7 +23,7 @@ class TestCompany < Minitest::Test
     VCR.use_cassette("companies/update_one") do
       object_id = sample_company[:hs_object_id]
       name = "#{sample_company[:name]} Updated"
-      attributes = { name: name }
+      attributes = { name: }
 
       company, _error = Skiwo::Hubspot::Company.update(object_id, properties: attributes)
       assert_equal attributes[:name], company.properties["name"]

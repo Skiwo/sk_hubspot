@@ -44,8 +44,8 @@ module Skiwo
         self.class.object_type
       end
 
-      def update(attributes)
-        response, error = self.class.update(id, attributes)
+      def update(properties)
+        response, error = self.class.update(id, properties:)
 
         if error
           errors << error
@@ -79,7 +79,7 @@ module Skiwo
         associations = Skiwo::Hubspot::Association.list(
           from_object_type: self.class.object_type,
           to_object_type: associated.object_type,
-          id: id
+          id:
         ) { |err| errors << err }
 
         if associations.any?

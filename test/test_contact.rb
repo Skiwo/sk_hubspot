@@ -37,7 +37,7 @@ class TestContact < Minitest::Test
       object_id = sample_contact.fetch(:hs_object_id)
       first_name = "#{sample_contact[:firstname]} Updated"
       platform_uid = "this-is-a-test-platform-id"
-      attributes = { firstname: first_name, platform_uid: platform_uid }
+      attributes = { firstname: first_name, platform_uid: }
 
       contact, _error = Skiwo::Hubspot::Contact.update(object_id, properties: attributes)
       assert_equal attributes[:firstname], contact.firstname
