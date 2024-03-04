@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "active_support/inflector"
-require "dotenv/load"
 
 require_relative "hubspot/version"
 require_relative "hubspot/configuration"
