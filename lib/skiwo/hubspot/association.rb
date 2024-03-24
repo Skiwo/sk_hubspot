@@ -41,6 +41,7 @@ module Skiwo
       end
 
       # TODO: it would be better if we had AssociationList
+      # TODO: raise an error if to_object.nil?
       def to_h
         input = { "types": types, "to": { "id": to_object.id } }
         input["from"] = { "id": from_object.id } if from_object

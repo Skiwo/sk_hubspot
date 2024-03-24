@@ -1,9 +1,5 @@
 # Skiwo Hubspot
 
-## Note
-The Skiwo::Hubspot gem is to be considered to be in alpha stage and
-the public interface might change.
-
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
