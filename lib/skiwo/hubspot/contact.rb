@@ -43,6 +43,10 @@ module Skiwo
       def companies
         @companies ||= load_associated(Company)
       end
+
+      def deals
+        @deals ||= load_associated(Deal)
+      end
     end
   end
 end

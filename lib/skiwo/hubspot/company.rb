@@ -9,25 +9,32 @@ module Skiwo
     class Company < Skiwo::Hubspot::CrmObject
       OBJECT_TYPE_ID = "0-2"
 
-      def self.object_type_id
-        OBJECT_TYPE_ID
-      end
+      class << self
+        def object_type_id
+          OBJECT_TYPE_ID
+        end
 
-      def self.default_properties
-        super + %w[
+        def default_properties
+          super + %w[
           name domain lifecyclestage hs_lead_status platform_uid platform_url
           platform_last_activity_date platform_industry platform_business_activity
           org_number
-        ]
-      end
+          ]
+        end
 
-      def self.find_by_org_number(org_number, &block)
-        results, error = search(org_number:)
-        respond_with(response: results.first, error:, &block)
+        def find_by_org_number(org_number, &block)
+          results, error = search(org_number:)
+          respond_with(response: results.first, error:, &block)
+        end
+        alias_method :find_by_organization_number, :find_by_org_number
       end
 
       def contacts
         @contacts ||= load_associated(Contact)
+      end
+
+      def deals
+        @deals ||= load_associated(Deal)
       end
 
       ##
