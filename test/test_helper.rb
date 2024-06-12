@@ -4,6 +4,7 @@ $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 require "skiwo/hubspot"
 require "hubspot-api-client"
 require "minitest/autorun"
+require "minitest/focus"
 require "dotenv/load"
 require "vcr"
 require "faker"

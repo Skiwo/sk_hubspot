@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sk_hubspot (0.1.4)
+    sk_hubspot (0.1.5)
       activesupport (>= 6.0)
       hubspot-api-client (~> 17.2)
 
@@ -39,6 +39,8 @@ GEM
     json (2.7.1)
     language_server-protocol (3.17.0.3)
     minitest (5.21.2)
+    minitest-focus (1.4.0)
+      minitest (>= 4, < 6)
     mutex_m (0.2.0)
     parallel (1.24.0)
     parser (3.3.0.5)
@@ -82,6 +84,7 @@ DEPENDENCIES
   dotenv
   faker (~> 3.2)
   minitest (~> 5.0)
+  minitest-focus
   rake (~> 13.0)
   rubocop (~> 1.21)
   rubocop-minitest (~> 0.34.5)

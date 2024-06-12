@@ -14,6 +14,7 @@ module Skiwo
       # Associtation Types
       DEAL_TO_CONTACT     = 3
       DEAL_TO_COMPANY     = 341
+      DEAL_TO_PRODUCT     = 630
       CONTACT_TO_COMPANY  = 279
       COMPANY_TO_CONTACT  = 280
 
@@ -31,6 +32,7 @@ module Skiwo
         @association_types ||= {
           "deal_to_contact" => DEAL_TO_CONTACT,
           "deal_to_company" => DEAL_TO_COMPANY,
+          "deal_to_product" => DEAL_TO_PRODUCT,
           "contact_to_company" => CONTACT_TO_COMPANY,
           "company_to_contact" => COMPANY_TO_CONTACT
         }
