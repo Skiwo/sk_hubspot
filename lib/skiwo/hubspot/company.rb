@@ -16,9 +16,9 @@ module Skiwo
 
         def default_properties
           super + %w[
-          name domain lifecyclestage hs_lead_status platform_uid platform_url
-          platform_last_activity_date platform_industry platform_business_activity
-          org_number
+            name domain lifecyclestage hs_lead_status platform_uid platform_url
+            platform_last_activity_date platform_industry platform_business_activity
+            org_number
           ]
         end
 
@@ -26,7 +26,7 @@ module Skiwo
           results, error = search(org_number:)
           respond_with(response: results.first, error:, &block)
         end
-        alias_method :find_by_organization_number, :find_by_org_number
+        alias find_by_organization_number find_by_org_number
       end
 
       def contacts

@@ -12,11 +12,13 @@ module Skiwo
       ASSOCIATION_CATEGORY = "HUBSPOT_DEFINED"
 
       # Associtation Types
-      DEAL_TO_CONTACT     = 3
-      DEAL_TO_COMPANY     = 341
-      DEAL_TO_PRODUCT     = 630
       CONTACT_TO_COMPANY  = 279
       COMPANY_TO_CONTACT  = 280
+      DEAL_TO_CONTACT     = 3
+      DEAL_TO_COMPANY     = 341
+      DEAL_TO_LINE_ITEM   = 19
+      DEAL_TO_PRODUCT     = 630
+      LINE_ITEM_TO_DEAL   = 20
 
       attr_accessor :from_object, :to_object, :type, :category, :errors
 
@@ -30,11 +32,13 @@ module Skiwo
 
       def self.association_types
         @association_types ||= {
+          "contact_to_company" => CONTACT_TO_COMPANY,
+          "company_to_contact" => COMPANY_TO_CONTACT,
           "deal_to_contact" => DEAL_TO_CONTACT,
           "deal_to_company" => DEAL_TO_COMPANY,
+          "deal_to_line_item" => DEAL_TO_LINE_ITEM,
           "deal_to_product" => DEAL_TO_PRODUCT,
-          "contact_to_company" => CONTACT_TO_COMPANY,
-          "company_to_contact" => COMPANY_TO_CONTACT
+          "line_item_to_deal" => LINE_ITEM_TO_DEAL
         }
       end
 

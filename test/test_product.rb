@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class TestProduct< Minitest::Test
+class TestProduct < Minitest::Test
   def test_that_it_finds_by_property_name
     VCR.use_cassette("products/find_by_property_name") do
       new_product, _error = Skiwo::Hubspot::Product.create(properties: basic_attributes)
@@ -24,10 +24,9 @@ class TestProduct< Minitest::Test
   def test_that_it_updates_product
     VCR.use_cassette("products/update_one") do
       new_product, _error = Skiwo::Hubspot::Product.create(properties: basic_attributes)
-      name = new_product.name + " Updated"
-      attributes = { name: name }
+      name = "#{new_product.name} Updated"
 
-      product, _error = Skiwo::Hubspot::Product.update(new_product.id, properties: attributes)
+      product, _error = Skiwo::Hubspot::Product.update(new_product.id, properties: { name: })
       assert_equal name, product.name
       new_product.delete
     end
@@ -50,10 +49,10 @@ class TestProduct< Minitest::Test
     {
       name: "Product One [TEST]",
       price: 1000.00,
-      platform_uid: "test-platform-uid"
-      # description: "Test Product in development",
+      platform_uid: "test-platform-uid",
+      description: "Test Product in development",
       # hs_cost_of_goods_sold: 600.00,
-      # hs_recurring_billing_period: "P12M"
+      hs_recurring_billing_period: "P12M"
     }
   end
 end

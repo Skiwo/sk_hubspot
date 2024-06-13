@@ -6,7 +6,7 @@ module Skiwo
     # Methods to query hubspot's crm api
     module CrmApi
       def object_type
-        name.demodulize
+        name.demodulize.underscore
       end
 
       ##

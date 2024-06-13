@@ -18,7 +18,7 @@ module Skiwo
                    hs_recurring_billing_period platform_uid platform_url]
       end
 
-      def self.find_by_name(email, &block)
+      def self.find_by_name(name, &block)
         results, error = search(name:)
         respond_with(response: results.first, error:, &block)
       end

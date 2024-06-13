@@ -13,6 +13,7 @@ require_relative "hubspot/contact"
 require_relative "hubspot/company"
 require_relative "hubspot/deal"
 require_relative "hubspot/product"
+require_relative "hubspot/line_item"
 
 module Skiwo
   module Hubspot # :nodoc:

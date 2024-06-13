@@ -2,10 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.hubapi.com/crm/v3/objects/Product
+    uri: https://api.hubapi.com/crm/v3/objects/product
     body:
       encoding: UTF-8
-      string: '{"properties":{"name":"Product One [TEST]","price":"1000.0","platform_uid":"test-platform-uid"}}'
+      string: '{"properties":{"name":"Product One [TEST]","price":"1000.0","platform_uid":"test-platform-uid","description":"Test
+        Product in development","hs_recurring_billing_period":"P12M"}}'
     headers:
       User-Agent:
       - hubspot-api-client-ruby; 17.2.0
@@ -23,13 +24,13 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 13 Jun 2024 05:28:23 GMT
+      - Thu, 13 Jun 2024 08:52:22 GMT
       Content-Type:
       - application/json;charset=utf-8
       Location:
-      - https://api.hubapi.com/crm/v3/objects/Product/2838093088
+      - https://api.hubapi.com/crm/v3/objects/product/2838274665
       Cf-Ray:
-      - 892fad47b8848f62-CPH
+      - 8930d8154c6e929d-CPH
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -41,7 +42,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '192'
+      - '105'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -49,15 +50,15 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-5d47c8d44f-hrsdc
+      - iad02/hubapi-td/envoy-proxy-5d47c8d44f-4ccs4
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 0440a92d-a46f-4af5-9d3b-a391a8d01656
+      - 93d9798a-5dcc-464f-a34a-fb5bf946cf8d
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499989'
+      - '499909'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
@@ -69,21 +70,22 @@ http_interactions:
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 0440a92d-a46f-4af5-9d3b-a391a8d01656
+      - 93d9798a-5dcc-464f-a34a-fb5bf946cf8d
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=qz26jyDg75JzOEE%2FIgQcDaEFu7lME0bzPC3jqXSdANfMAhysDVchGlgxTmgs6CFJ3WpeOpUOb6nRcO0tYHUj6FxOTPsILnstGohwse8rOHAn4RicPw2jkOdPFD04jmzr"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=Y3G80JYCP%2FegZx5uslRFwrcO214y1TeFtBnHUmGN0FjPTgCYVqqRQVKCm%2Bz8mdUY7zcWLX6E9WDlkmRu7ykHkTNuyUNH3JRrH0dU0Q5%2FXnEqWqszhbGs9tgUOEkOvvF0"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"2838093088","properties":{"createdate":"2024-06-13T05:28:23.119Z","hs_lastmodifieddate":"2024-06-13T05:28:23.119Z","hs_object_id":"2838093088","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_price_nok":"1000.0","name":"Product
-        One [TEST]","platform_uid":"test-platform-uid","price":"1000.0"},"createdAt":"2024-06-13T05:28:23.119Z","updatedAt":"2024-06-13T05:28:23.119Z","archived":false}'
-  recorded_at: Thu, 13 Jun 2024 05:28:23 GMT
+      string: '{"id":"2838274665","properties":{"createdate":"2024-06-13T08:52:22.046Z","description":"Test
+        Product in development","hs_lastmodifieddate":"2024-06-13T08:52:22.046Z","hs_object_id":"2838274665","hs_object_source":"INTEGRATION","hs_object_source_id":"2448769","hs_object_source_label":"INTEGRATION","hs_price_nok":"1000.0","hs_recurring_billing_period":"P12M","name":"Product
+        One [TEST]","platform_uid":"test-platform-uid","price":"1000.0"},"createdAt":"2024-06-13T08:52:22.046Z","updatedAt":"2024-06-13T08:52:22.046Z","archived":false}'
+  recorded_at: Thu, 13 Jun 2024 08:52:22 GMT
 - request:
     method: post
-    uri: https://api.hubapi.com/crm/v3/objects/Product/search
+    uri: https://api.hubapi.com/crm/v3/objects/product/search
     body:
       encoding: UTF-8
       string: '{"filterGroups":[{"filters":[{"value":"Product One [TEST]","propertyName":"name","operator":"EQ"}]}],"properties":["hs_object_id","createdate","lastmodifieddate","name","price","hs_sku","description","hs_cost_of_goods_sold","hs_recurring_billing_period","platform_uid","platform_url"]}'
@@ -104,11 +106,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 13 Jun 2024 05:28:23 GMT
+      - Thu, 13 Jun 2024 08:52:22 GMT
       Content-Type:
       - application/json;charset=utf-8
       Cf-Ray:
-      - 892fad4a1a988f62-CPH
+      - 8930d816de89929d-CPH
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -120,7 +122,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '65'
+      - '54'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -128,32 +130,32 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-5d47c8d44f-bz48r
+      - iad02/hubapi-td/envoy-proxy-5d47c8d44f-l9tqr
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 89eb30d2-b0c4-4eb3-b374-4462bc03b127
+      - 129b2730-616d-49f1-9d3f-04bfce50bd93
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499988'
+      - '499908'
       X-Request-Id:
-      - 89eb30d2-b0c4-4eb3-b374-4462bc03b127
+      - 129b2730-616d-49f1-9d3f-04bfce50bd93
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=cmEwlA1hSbWYogybKtPjIGaeQrSweg27noG3%2Bfg0t6%2BXb9mlIuogfIsUllrF1tgbBg%2BoXAYtoTvW95GKIbOtdLxW6XifhHIC9S%2FVnrnj2amJ0Se6R10X7SNcl7md9mWC"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=BnXAEfkxEyK6AIX8tyef1BLygtfnxFEvtABaeZLmRYuPaPEPnabAvPWh6ZpATkKp9fyhh2wTazywAJp0LIUcz1GSFiT2tETKxfr2POnR9esd3t0jKbfGkfIhV%2FEHdcU4"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
-      string: '{"total":2,"results":[{"id":"2838075469","properties":{"createdate":"2024-06-13T04:28:04.671Z","description":null,"hs_cost_of_goods_sold":null,"hs_lastmodifieddate":"2024-06-13T04:28:05.510Z","hs_object_id":"2838075469","hs_recurring_billing_period":null,"hs_sku":null,"name":"Product
-        One [TEST]","platform_uid":"test-platform-uid","platform_url":null,"price":"1000.0"},"createdAt":"2024-06-13T04:28:04.671Z","updatedAt":"2024-06-13T04:28:05.510Z","archived":false},{"id":"2838063980","properties":{"createdate":"2024-06-13T04:37:27.566Z","description":null,"hs_cost_of_goods_sold":null,"hs_lastmodifieddate":"2024-06-13T04:37:28.016Z","hs_object_id":"2838063980","hs_recurring_billing_period":null,"hs_sku":null,"name":"Product
-        One [TEST]","platform_uid":"test-platform-uid","platform_url":null,"price":"1000.0"},"createdAt":"2024-06-13T04:37:27.566Z","updatedAt":"2024-06-13T04:37:28.016Z","archived":false}]}'
-  recorded_at: Thu, 13 Jun 2024 05:28:23 GMT
+      string: '{"total":1,"results":[{"id":"2838302469","properties":{"createdate":"2024-06-13T08:51:52.287Z","description":"Test
+        Product in development","hs_cost_of_goods_sold":null,"hs_lastmodifieddate":"2024-06-13T08:51:53.081Z","hs_object_id":"2838302469","hs_recurring_billing_period":"P12M","hs_sku":null,"name":"Product
+        One [TEST]","platform_uid":"test-platform-uid","platform_url":null,"price":"1000.0"},"createdAt":"2024-06-13T08:51:52.287Z","updatedAt":"2024-06-13T08:51:53.081Z","archived":false}]}'
+  recorded_at: Thu, 13 Jun 2024 08:52:22 GMT
 - request:
     method: delete
-    uri: https://api.hubapi.com/crm/v3/objects/Product/2838093088
+    uri: https://api.hubapi.com/crm/v3/objects/product/2838274665
     body:
       encoding: US-ASCII
       string: ''
@@ -174,9 +176,9 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 13 Jun 2024 05:28:50 GMT
+      - Thu, 13 Jun 2024 08:52:22 GMT
       Cf-Ray:
-      - 892fadf29c368f62-CPH
+      - 8930d818280a929d-CPH
       Cf-Cache-Status:
       - DYNAMIC
       Strict-Transport-Security:
@@ -188,7 +190,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '57'
+      - '50'
       X-Evy-Trace-Listener:
       - listener_https
       X-Evy-Trace-Route-Configuration:
@@ -196,29 +198,29 @@ http_interactions:
       X-Evy-Trace-Route-Service-Name:
       - envoyset-translator
       X-Evy-Trace-Served-By-Pod:
-      - iad02/hubapi-td/envoy-proxy-5d47c8d44f-d7kd4
+      - iad02/hubapi-td/envoy-proxy-5d47c8d44f-mdkfn
       X-Evy-Trace-Virtual-Host:
       - all
       X-Hubspot-Correlation-Id:
-      - 4890e0e7-d330-4c56-aae9-b57b4513f5b5
+      - 8a03c5ac-864a-455f-98a8-88fdcc55ef59
       X-Hubspot-Ratelimit-Daily:
       - '500000'
       X-Hubspot-Ratelimit-Daily-Remaining:
-      - '499987'
+      - '499907'
       X-Hubspot-Ratelimit-Interval-Milliseconds:
       - '10000'
       X-Hubspot-Ratelimit-Max:
       - '150'
       X-Hubspot-Ratelimit-Remaining:
-      - '149'
+      - '148'
       X-Hubspot-Ratelimit-Secondly:
       - '15'
       X-Hubspot-Ratelimit-Secondly-Remaining:
       - '14'
       X-Request-Id:
-      - 4890e0e7-d330-4c56-aae9-b57b4513f5b5
+      - 8a03c5ac-864a-455f-98a8-88fdcc55ef59
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=eiJG8EI%2F7AL1ay9zEN%2FKHgeUq7gQNHZwg%2B4Hj4MgTqpblIJQIczhNt6JTTOB0HLbEQDdFP6hZAoYPLNe474%2BzJKvVar1ZcuUObh5M650A1u4FByJX7v97%2BdFvnVRjOcI"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=PYBdpzbRaQ8g52STCQ%2BrHEoVwvehBcEGHfu7K2xQfY07Vlqx7Fe2pvB4bucOqQtagOqjD1fg%2FJ1m8QKbEggDH7861%2F62cf8FVKcTbN%2FzsXYMLwBx2ciiBYlQs2fbyJzS"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}'
       Server:
@@ -226,5 +228,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: ''
-  recorded_at: Thu, 13 Jun 2024 05:28:50 GMT
+  recorded_at: Thu, 13 Jun 2024 08:52:22 GMT
 recorded_with: VCR 6.2.0
